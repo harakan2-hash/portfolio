@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中華そば 那由多 ｜ 大阪・十三｜生姜香る、ご飯がススムラーメン屋</title>
+<meta name="description" content="大阪・十三の中華そば専門店「那由多」。熟成醤油の生姜中華そばと貝ダシ中華そばの二本柱。生卵と海苔は使い放題、秋田県大潟村直送あきたこまち。阪急十三駅から徒歩3分。">
+<meta name="theme-color" content="#1a1714">
+<meta property="og:type" content="website">
+<meta property="og:title" content="中華そば 那由多 ｜ 大阪・十三">
+<meta property="og:description" content="生姜香る一杯と、ご飯がススム幸せを。生卵・海苔は使い放題。">
+<meta property="og:locale" content="ja_JP">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='23' fill='%231a1714'/%3E%3Ccircle cx='24' cy='24' r='16' fill='none' stroke='%23c73e3a' stroke-width='2.5'/%3E%3Ctext x='24' y='31' text-anchor='middle' fill='%23f2ede4' font-size='19' font-family='serif' font-weight='bold'%3E那%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=Yuji+Syuku&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Restaurant","name":"中華そば 那由多","servesCuisine":"ラーメン","priceRange":"¥1,000~","telephone":"+81-6-6300-7553","address":{"@type":"PostalAddress","addressRegion":"大阪府","addressLocality":"大阪市淀川区","streetAddress":"十三東3-28-14","addressCountry":"JP"}}
+</script>
+<style>
+:root{
+  --sumi:#1a1714;      /* 墨黒 */
+  --sumi-2:#241f1a;
+  --card:#2a241e;
+  --wood:#c9a876;      /* 白木・金 */
+  --wood-soft:#a8916a;
+  --aka:#c73e3a;       /* 朱赤 */
+  --aka-deep:#a32f2c;
+  --kinari:#f2ede4;    /* 生成り */
+  --grey:#b5aa99;
+  --line:#3d352c;
+  --shadow:rgba(0,0,0,.45);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--kinari);background:var(--sumi);line-height:2;overflow-x:hidden}
+h1,h2,h3{font-family:'Shippori Mincho',serif}
+.fude{font-family:'Yuji Syuku',serif}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.center{text-align:center}
+
+/* preloader */
+#pre{position:fixed;inset:0;z-index:9999;background:var(--sumi);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;transition:opacity .7s,visibility .7s}
+#pre.done{opacity:0;visibility:hidden}
+#pre .enso{width:90px;height:90px;position:relative}
+#pre .enso svg{width:100%;height:100%;animation:spin 2.4s linear infinite}
+#pre .enso .ch{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Yuji Syuku';font-size:34px;color:var(--kinari)}
+@keyframes spin{to{transform:rotate(360deg)}}
+#pre .pl-txt{font-family:'Shippori Mincho';letter-spacing:.5em;font-size:14px;color:var(--wood);padding-left:.5em}
+
+/* progress */
+#prog{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--aka),var(--wood));z-index:200}
+
+/* header */
+header{position:fixed;top:0;left:0;width:100%;z-index:100;padding:18px 0;transition:.4s}
+header.scrolled{background:rgba(26,23,20,.95);backdrop-filter:blur(8px);padding:12px 0;box-shadow:0 4px 24px var(--shadow);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:12px}
+.logo .en{width:42px;height:42px;flex:0 0 42px}
+.logo .txt{font-family:'Shippori Mincho';font-size:21px;font-weight:700;letter-spacing:.2em}
+.logo .txt small{display:block;font-size:9.5px;letter-spacing:.42em;font-weight:400;color:var(--wood);margin-top:2px}
+.menu{display:flex;gap:30px;align-items:center}
+.menu a{font-size:13.5px;letter-spacing:.16em;transition:.3s;position:relative}
+.menu a:not(.btn)::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--wood);transition:.3s}
+.menu a:not(.btn):hover::after{width:100%}
+.menu a:not(.btn):hover{color:var(--wood)}
+.btn{background:var(--aka);color:#fff!important;padding:11px 24px;border-radius:2px;font-size:13px;letter-spacing:.14em;transition:.3s;border:1px solid var(--aka)}
+.btn:hover{background:transparent;color:var(--aka)!important}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:110}
+.burger span{width:26px;height:2px;background:var(--kinari);transition:.3s}
+
+/* hero */
+.hero{height:100vh;min-height:640px;position:relative;display:flex;align-items:center;color:#fff;overflow:hidden}
+.hero .bg{position:absolute;inset:-8% 0;z-index:0}
+.hero .bg img{width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(15,12,10,.82) 30%,rgba(15,12,10,.25) 75%);z-index:1}
+.hero-inner{position:relative;z-index:2;width:100%;display:flex;justify-content:space-between;align-items:center}
+.hero .copy{opacity:0;transform:translateY(30px);animation:up 1.2s .4s forwards}
+.hero .tate{writing-mode:vertical-rl;font-family:'Shippori Mincho';font-size:clamp(38px,6.4vw,72px);font-weight:700;letter-spacing:.28em;line-height:1.6;height:min(62vh,540px);text-shadow:0 4px 30px rgba(0,0,0,.5)}
+.hero .tate .aka{color:var(--aka);text-shadow:0 0 26px rgba(199,62,58,.45)}
+.hero .sub{margin-top:26px;font-size:14px;letter-spacing:.3em;color:var(--wood);font-weight:300}
+.hero .hanko{position:absolute;right:4vw;bottom:12vh;z-index:2;width:92px;height:92px;background:var(--aka);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-direction:column;color:#fff;font-family:'Yuji Syuku';transform:rotate(4deg);box-shadow:0 14px 40px rgba(199,62,58,.4);opacity:0;animation:up 1s 1.1s forwards}
+.hero .hanko span{font-size:26px;line-height:1.3}
+.scroll-ind{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:2;font-size:11px;letter-spacing:.3em;color:var(--wood)}
+.scroll-ind::after{content:"";display:block;width:1px;height:44px;background:var(--wood);margin:10px auto 0;animation:line 2s infinite}
+@keyframes line{0%,100%{transform:scaleY(.3);opacity:.3}50%{transform:scaleY(1);opacity:1}}
+@keyframes up{to{opacity:1;transform:none}}
+
+/* ribbon */
+.ribbon{background:var(--aka);color:#fff;padding:11px 0;overflow:hidden;white-space:nowrap}
+.ribbon .track{display:inline-block;animation:marq 30s linear infinite;font-family:'Shippori Mincho';letter-spacing:.24em;font-size:13.5px}
+.ribbon .track span{margin:0 30px}
+.ribbon .track span::after{content:"●";margin-left:60px;font-size:7px;vertical-align:middle;opacity:.6}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* section base */
+section{padding:110px 0}
+.label{font-size:13px;letter-spacing:.4em;color:var(--aka);margin-bottom:16px;display:block;font-weight:500}
+.sec-title{font-size:clamp(26px,4vw,40px);font-weight:700;letter-spacing:.14em;line-height:1.6;margin-bottom:22px}
+.lead{color:var(--grey);font-weight:300;max-width:660px;margin:0 auto;font-size:14.5px}
+
+/* concept */
+.concept-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.concept-txt h2{font-size:clamp(24px,3.4vw,36px);font-weight:700;line-height:1.9;margin-bottom:28px;letter-spacing:.1em}
+.concept-txt p{color:var(--grey);font-weight:300;margin-bottom:18px;font-size:14.5px}
+.concept-img{position:relative}
+.concept-img img{border-radius:3px;box-shadow:0 30px 60px var(--shadow)}
+.concept-img::before{content:"";position:absolute;inset:-16px 16px 16px -16px;border:1px solid var(--wood);border-radius:3px;z-index:-1;opacity:.5}
+
+/* stats */
+.stats{background:var(--sumi-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.stat b{font-family:'Shippori Mincho';font-size:clamp(38px,5.6vw,56px);font-weight:700;color:var(--wood);line-height:1;display:inline-block}
+.stat .u{font-size:16px;color:var(--wood)}
+.stat span{display:block;margin-top:10px;font-size:12.5px;letter-spacing:.1em;color:var(--grey)}
+
+/* two pillars */
+.pillars{background:var(--sumi)}
+.pillar-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:56px}
+.pillar{position:relative;border-radius:4px;overflow:hidden;min-height:520px;display:flex;align-items:flex-end;transition:.5s}
+.pillar:hover{transform:translateY(-8px)}
+.pillar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.7s}
+.pillar:hover img{transform:scale(1.06)}
+.pillar::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(15,12,10,.05) 30%,rgba(15,12,10,.92) 78%)}
+.pillar .no{position:absolute;top:22px;left:24px;z-index:2;font-family:'Shippori Mincho';color:var(--wood);font-size:14px;letter-spacing:.3em;border:1px solid var(--wood);padding:6px 14px}
+.pillar .pd{position:relative;z-index:2;padding:34px 32px 36px}
+.pillar .pd .tate-t{font-family:'Shippori Mincho';font-size:26px;font-weight:700;letter-spacing:.12em;margin-bottom:12px;line-height:1.6}
+.pillar .pd .tate-t em{font-style:normal;color:var(--aka);font-family:'Yuji Syuku'}
+.pillar .pd p{font-size:13.5px;color:#d8cfc0;font-weight:300;line-height:1.9}
+.pillar .pd .pr{margin-top:14px;font-family:'Shippori Mincho';color:var(--wood);font-size:20px;font-weight:700}
+.pillar .pd .pr small{font-size:11px;color:var(--grey);font-weight:400;margin-left:6px}
+
+/* menu(お品書き) */
+.oshina{background:var(--sumi-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.filter{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:36px 0 8px}
+.filter button{border:1px solid var(--line);background:transparent;color:var(--grey);padding:9px 24px;border-radius:2px;font-family:'Shippori Mincho';font-size:13.5px;letter-spacing:.14em;cursor:pointer;transition:.3s}
+.filter button.active,.filter button:hover{background:var(--aka);border-color:var(--aka);color:#fff}
+.menu-list{max-width:760px;margin:36px auto 0;text-align:left}
+.mi{display:flex;align-items:baseline;gap:14px;padding:20px 6px;border-bottom:1px dashed var(--line);transition:.3s}
+.mi.hide{display:none}
+.mi:hover{background:rgba(201,168,118,.04)}
+.mi .nm{font-family:'Shippori Mincho';font-size:17px;font-weight:600;letter-spacing:.08em;flex:0 0 auto}
+.mi .nm .tag{font-family:'Noto Sans JP';font-size:10px;font-weight:700;background:var(--aka);color:#fff;padding:3px 10px;border-radius:2px;margin-left:10px;vertical-align:2px;letter-spacing:.08em}
+.mi .dots{flex:1;border-bottom:1px dotted var(--wood-soft);opacity:.4;transform:translateY(-4px)}
+.mi .pr{font-family:'Shippori Mincho';font-size:18px;font-weight:700;color:var(--wood);flex:0 0 auto}
+.mi .ds{width:100%;font-size:12.5px;color:var(--grey);font-weight:300;margin-top:2px}
+.mi-w{display:flex;flex-wrap:wrap;flex:1;align-items:baseline;gap:0 14px}
+.menu-note{text-align:center;font-size:11.5px;color:var(--grey);margin-top:26px;font-weight:300}
+
+/* tabletop(卓上の楽しみ) */
+.taku{background:var(--sumi)}
+.taku-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:56px}
+.tk{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:36px 30px;text-align:center;transition:.4s;position:relative}
+.tk:hover{transform:translateY(-6px);border-color:var(--wood)}
+.tk .ic{font-size:40px;line-height:1;margin-bottom:18px}
+.tk h3{font-family:'Shippori Mincho';font-size:19px;font-weight:700;letter-spacing:.12em;margin-bottom:12px}
+.tk h3 .free{display:inline-block;font-size:10px;background:var(--aka);color:#fff;padding:3px 10px;border-radius:2px;margin-left:8px;vertical-align:3px;letter-spacing:.1em}
+.tk p{font-size:13px;color:var(--grey);font-weight:300}
+.howto{max-width:720px;margin:64px auto 0;background:var(--card);border:1px solid var(--line);border-radius:4px;padding:40px 44px}
+.howto h3{font-family:'Shippori Mincho';font-size:20px;letter-spacing:.14em;text-align:center;margin-bottom:28px}
+.howto h3 .fude{color:var(--aka);font-size:24px}
+.step-l{display:flex;gap:14px;margin-bottom:20px;align-items:flex-start}
+.step-l:last-child{margin-bottom:0}
+.step-l i{flex:0 0 34px;height:34px;border-radius:50%;background:var(--aka);color:#fff;display:flex;align-items:center;justify-content:center;font-style:normal;font-family:'Shippori Mincho';font-weight:700;font-size:15px;margin-top:4px}
+.step-l div b{font-size:14.5px;letter-spacing:.06em;display:block;font-weight:500}
+.step-l div p{font-size:12.5px;color:var(--grey);font-weight:300}
+
+/* rice */
+.rice{position:relative;color:#fff;overflow:hidden}
+.rice .bg{position:absolute;inset:0}
+.rice .bg img{width:100%;height:100%;object-fit:cover}
+.rice::after{content:"";position:absolute;inset:0;background:rgba(15,12,10,.78)}
+.rice .wrap{position:relative;z-index:2}
+.rice-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.rice h2{font-size:clamp(24px,3.6vw,38px);letter-spacing:.12em;line-height:1.8;margin-bottom:24px}
+.rice h2 em{font-style:normal;color:var(--wood)}
+.rice p{color:#d8cfc0;font-weight:300;font-size:14.5px;margin-bottom:16px}
+.rice .don{background:rgba(199,62,58,.14);border:1px solid var(--aka);border-radius:4px;padding:22px 26px;margin-top:8px}
+.rice .don b{font-family:'Shippori Mincho';font-size:17px;letter-spacing:.08em;color:#fff}
+.rice .don span{color:var(--wood);font-family:'Shippori Mincho';font-weight:700;margin-left:10px}
+.rice .don p{font-size:12.5px;margin:6px 0 0}
+.rice-img img{border-radius:4px;box-shadow:0 30px 70px rgba(0,0,0,.5)}
+
+/* gallery */
+.gallery{background:var(--sumi-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.g-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:52px}
+.g-grid a{overflow:hidden;border-radius:3px;aspect-ratio:1;cursor:pointer;position:relative}
+.g-grid img{width:100%;height:100%;object-fit:cover;transition:.6s;filter:saturate(.92)}
+.g-grid a::after{content:"拡大";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;letter-spacing:.3em;background:rgba(199,62,58,0);opacity:0;transition:.4s;font-family:'Shippori Mincho'}
+.g-grid a:hover img{transform:scale(1.1)}
+.g-grid a:hover::after{background:rgba(199,62,58,.4);opacity:1}
+.g-grid a:nth-child(1),.g-grid a:nth-child(6){grid-row:span 2;aspect-ratio:auto}
+#lb{position:fixed;inset:0;z-index:500;background:rgba(10,8,6,.94);display:none;align-items:center;justify-content:center}
+#lb.open{display:flex}
+#lb img{max-width:88%;max-height:82%;border-radius:4px}
+#lb .x,#lb .nav-a{position:absolute;color:#fff;cursor:pointer;user-select:none;transition:.3s}
+#lb .x{top:24px;right:32px;font-size:34px}
+#lb .nav-a{top:50%;transform:translateY(-50%);font-size:46px;width:60px;text-align:center;opacity:.7}
+#lb .nav-a:hover,#lb .x:hover{opacity:1;color:var(--wood)}
+#lb .prev{left:10px}#lb .next{right:10px}
+
+/* voice */
+.voice{background:var(--sumi)}
+.slider{max-width:760px;margin:44px auto 0;position:relative;min-height:190px}
+.slide{opacity:0;position:absolute;inset:0;transition:.7s;text-align:center;pointer-events:none}
+.slide.active{opacity:1;position:relative;pointer-events:auto}
+.slide .stars{color:var(--wood);letter-spacing:.24em;margin-bottom:18px}
+.slide p{font-size:clamp(16px,2.3vw,20px);font-family:'Shippori Mincho';font-weight:500;line-height:2.1}
+.slide cite{display:block;margin-top:18px;font-style:normal;font-size:12.5px;color:var(--grey);letter-spacing:.1em}
+.dots{display:flex;gap:10px;justify-content:center;margin-top:30px}
+.dots i{width:9px;height:9px;border-radius:50%;background:var(--line);cursor:pointer;transition:.3s}
+.dots i.on{background:var(--aka);transform:scale(1.25)}
+
+/* insta */
+.insta{background:var(--sumi-2);border-top:1px solid var(--line)}
+.insta-head a{font-family:'Shippori Mincho';font-size:19px;letter-spacing:.08em;color:var(--wood);font-weight:600}
+.ig-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:44px}
+.ig-grid a{aspect-ratio:1;overflow:hidden;border-radius:3px}
+.ig-grid img{width:100%;height:100%;object-fit:cover;transition:.5s;filter:saturate(.92)}
+.ig-grid a:hover img{transform:scale(1.08)}
+
+/* faq */
+.faqsec{background:var(--sumi)}
+.faq-wrap{max-width:740px;margin:48px auto 0}
+.faq{border-bottom:1px solid var(--line)}
+.faq q{display:flex;align-items:center;gap:14px;padding:22px 4px;cursor:pointer;font-weight:500;font-size:15px;quotes:none}
+.faq q::before{content:"問";font-family:'Shippori Mincho';color:var(--aka);font-size:17px;font-weight:700;flex:0 0 auto}
+.faq q em{margin-left:auto;font-style:normal;color:var(--wood);font-size:22px;transition:.3s;flex:0 0 auto}
+.faq.open q em{transform:rotate(45deg)}
+.faq .a{max-height:0;overflow:hidden;transition:.4s;color:var(--grey);font-weight:300;font-size:13.5px}
+.faq.open .a{max-height:220px;padding:0 4px 22px 32px}
+
+/* access */
+.access{background:var(--sumi-2);border-top:1px solid var(--line)}
+.acc-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:20px;align-items:start}
+.acc-grid dl{display:grid;grid-template-columns:96px 1fr;row-gap:18px;margin-top:14px}
+.acc-grid dt{font-family:'Shippori Mincho';letter-spacing:.2em;color:var(--wood);font-size:13.5px;border-bottom:1px solid var(--line);padding-bottom:16px}
+.acc-grid dd{font-weight:300;font-size:14px;border-bottom:1px solid var(--line);padding-bottom:16px;color:#d8cfc0}
+.acc-grid dd b{color:var(--kinari);font-weight:500}
+.map{border-radius:4px;overflow:hidden;box-shadow:0 20px 44px var(--shadow);height:100%;min-height:380px;border:1px solid var(--line)}
+.map iframe{width:100%;height:100%;border:0;filter:invert(.88) grayscale(.3) contrast(.9)}
+
+/* footer */
+footer{background:#120f0c;color:var(--kinari);padding:66px 0 90px;text-align:center;border-top:1px solid var(--line)}
+footer .logo{justify-content:center;margin-bottom:8px;display:flex}
+footer .fnav{display:flex;gap:26px;justify-content:center;margin:26px 0;flex-wrap:wrap}
+footer .fnav a{font-size:12.5px;letter-spacing:.14em;opacity:.8;transition:.3s}
+footer .fnav a:hover{opacity:1;color:var(--wood)}
+footer .sns{display:flex;gap:16px;justify-content:center;margin-bottom:26px}
+footer .sns a{width:40px;height:40px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:.3s}
+footer .sns a:hover{background:var(--aka);border-color:var(--aka)}
+footer .sns svg{width:17px;height:17px;fill:var(--kinari)}
+footer .copy{font-size:11px;opacity:.45;letter-spacing:.1em;margin-top:18px}
+
+/* mobile cta / top */
+.mcta{position:fixed;bottom:0;left:0;width:100%;z-index:90;display:none;background:var(--sumi-2);border-top:1px solid var(--line);box-shadow:0 -6px 20px var(--shadow)}
+.mcta a{flex:1;text-align:center;padding:14px 0;font-size:13px;font-weight:500}
+.mcta a.call{background:var(--aka);color:#fff}
+#top{position:fixed;right:22px;bottom:22px;width:46px;height:46px;border-radius:50%;background:var(--aka);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;pointer-events:none;transition:.4s;z-index:95;box-shadow:0 8px 22px rgba(199,62,58,.4)}
+#top.show{opacity:1;pointer-events:auto}
+
+.reveal{opacity:0;transform:translateY(40px);transition:.9s cubic-bezier(.2,.7,.3,1)}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .concept-grid,.pillar-grid,.rice-grid,.acc-grid{grid-template-columns:1fr;gap:44px}
+  .taku-grid{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:1fr 1fr;gap:36px 20px}
+  .ig-grid{grid-template-columns:repeat(3,1fr)}
+  .pillar{min-height:440px}
+}
+@media(max-width:680px){
+  section{padding:76px 0}
+  .menu{position:fixed;top:0;right:-100%;height:100vh;width:78%;background:var(--sumi-2);flex-direction:column;justify-content:center;gap:28px;transition:.45s;box-shadow:-10px 0 40px rgba(0,0,0,.5);border-left:1px solid var(--line)}
+  .menu.open{right:0}
+  .burger{display:flex}
+  .g-grid{grid-template-columns:1fr 1fr}
+  .g-grid a:nth-child(1),.g-grid a:nth-child(6){grid-row:span 1;aspect-ratio:1}
+  .hero .tate{height:min(56vh,430px);letter-spacing:.2em}
+  .hero .hanko{width:74px;height:74px;right:5vw;bottom:9vh}
+  .hero .hanko span{font-size:20px}
+  .howto{padding:32px 24px}
+  .mcta{display:flex}
+  footer{padding-bottom:110px}
+  #top{bottom:74px}
+  .mi .nm{font-size:15px}
+}
+</style>
+</head>
+<body>
+
+<div id="pre">
+  <div class="enso">
+    <svg viewBox="0 0 90 90" fill="none"><circle cx="45" cy="45" r="38" stroke="#c9a876" stroke-width="3" stroke-dasharray="200 40" stroke-linecap="round"/></svg>
+    <div class="ch">那</div>
+  </div>
+  <div class="pl-txt">中華そば 那由多</div>
+</div>
+
+<div id="prog"></div>
+
+<header id="hd">
+  <div class="wrap nav">
+    <a href="#" class="logo">
+      <svg class="en" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="#c73e3a" stroke-width="2.5" stroke-dasharray="120 18" stroke-linecap="round"/><text x="24" y="31" text-anchor="middle" fill="#f2ede4" font-size="18" font-family="Shippori Mincho,serif" font-weight="700">那</text></svg>
+      <span class="txt">中華そば 那由多<small>NAYUTA — 大阪・十三</small></span>
+    </a>
+    <nav class="menu" id="mn">
+      <a href="#kodawari">こだわり</a>
+      <a href="#nihonbashira">二本柱</a>
+      <a href="#oshinagaki">お品書き</a>
+      <a href="#takujou">卓上の楽しみ</a>
+      <a href="#access">店舗案内</a>
+      <a href="tel:0663007553" class="btn">☎ 06-6300-7553</a>
+    </nav>
+    <div class="burger" id="bg"><span></span><span></span><span></span></div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="bg" id="heroBg"><img src="images/hero.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=1600&q=80'" alt="中華そば"></div>
+  <div class="wrap hero-inner">
+    <div class="copy">
+      <div class="tate">生姜香る、<br><span class="aka">ご飯がススム</span>一杯。</div>
+      <p class="sub">中華そば 那由多 — 阪急十三駅 徒歩三分</p>
+    </div>
+  </div>
+  <div class="hanko"><span>生卵</span><span style="font-size:11px;letter-spacing:.1em">海苔 使い放題</span></div>
+  <div class="scroll-ind">SCROLL</div>
+</section>
+
+<div class="ribbon"><div class="track">
+  <span>熟成醤油の生姜中華そば</span><span>貝ダシ中華そば</span><span>煮干しつけそば</span><span>炙りレアチャーシュー丼</span><span>秋田大潟村あきたこまち</span><span>生卵・海苔 使い放題</span>
+  <span>熟成醤油の生姜中華そば</span><span>貝ダシ中華そば</span><span>煮干しつけそば</span><span>炙りレアチャーシュー丼</span><span>秋田大潟村あきたこまち</span><span>生卵・海苔 使い放題</span>
+</div></div>
+
+<section id="kodawari">
+  <div class="wrap">
+    <div class="concept-grid">
+      <div class="concept-txt reveal">
+        <span class="label">こだわり ｜ CONCEPT</span>
+        <h2>ラーメン屋なのに、<br>ご飯の話をさせてください。</h2>
+        <p>当店のコンセプトは「ご飯がススムラーメン屋」。老舗蔵元の再仕込み熟成醤油に、生姜の香味油を低温でじっくりと移したスープは、淡麗ながら深い旨味。ひと口すすれば、白いご飯が恋しくなる——そんな一杯です。</p>
+        <p>麺は国産小麦の全粒粉細麺。スープとの調和を第一に、香り・喉ごし・すすり心地を突き詰めました。</p>
+      </div>
+      <div class="concept-img reveal">
+        <img src="images/kodawari.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1591814468924-caf88d1232e1?auto=format&fit=crop&w=900&q=80'" alt="こだわりの一杯">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat reveal"><b data-to="3">0</b><span class="u">分</span><span>阪急十三駅から徒歩</span></div>
+      <div class="stat reveal"><b data-to="2">0</b><span class="u">本柱</span><span>熟成醤油 × 貝ダシ</span></div>
+      <div class="stat reveal"><b data-to="0">0</b><span class="u">円</span><span>生卵・海苔は使い放題</span></div>
+      <div class="stat reveal"><b data-to="4.3">0</b><span>Google クチコミ評価</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="pillars" id="nihonbashira">
+  <div class="wrap center">
+    <span class="label">二本柱 ｜ SIGNATURE</span>
+    <h2 class="sec-title">スープは、二つの流儀。</h2>
+    <p class="lead">まったく性格の違う二杯をご用意しています。今日の気分で、お選びください。</p>
+    <div class="pillar-grid">
+      <div class="pillar reveal">
+        <img src="images/shoyu.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1623341214825-9f4f963727da?auto=format&fit=crop&w=800&q=80'" alt="熟成醤油の生姜中華そば">
+        <span class="no">壱ノ杯</span>
+        <div class="pd">
+          <div class="tate-t">熟成醤油の<em>生姜</em>中華そば</div>
+          <p>老舗蔵元の再仕込み熟成醤油。生姜の香味油を低温でじっくり移し、淡麗ながら深い旨味に仕上げました。しっとり柔らかなレアチャーシューとともに。</p>
+          <div class="pr">¥950<small>特製 ¥1,200(税込)</small></div>
+        </div>
+      </div>
+      <div class="pillar reveal">
+        <img src="images/kaidashi.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1557872943-16a5ac26437e?auto=format&fit=crop&w=800&q=80'" alt="貝ダシ中華そば">
+        <span class="no">弐ノ杯</span>
+        <div class="pd">
+          <div class="tate-t">淡色醤油の<em>貝ダシ</em>中華そば</div>
+          <p>しじみ・帆立・浅利。貝を贅沢に重ねた出汁は、潮風を感じるような香りの良さ。淡色醤油が貝の甘みをそっと引き立てます。</p>
+          <div class="pr">¥950<small>特製 ¥1,200(税込)</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="oshina" id="oshinagaki">
+  <div class="wrap center">
+    <span class="label">お品書き ｜ MENU</span>
+    <h2 class="sec-title">お品書き</h2>
+    <div class="filter" id="filter">
+      <button class="active" data-f="all">すべて</button>
+      <button data-f="soba">中華そば</button>
+      <button data-f="tsuke">つけ・まぜ</button>
+      <button data-f="gohan">ご飯もの</button>
+    </div>
+    <div class="menu-list" id="mlist">
+      <div class="mi" data-cat="soba"><div class="mi-w"><span class="nm">熟成醤油の生姜中華そば<span class="tag">看板</span></span><span class="dots"></span><span class="pr">¥950</span><span class="ds">生姜香味油×再仕込み熟成醤油。レアチャーシュー付き</span></div></div>
+      <div class="mi" data-cat="soba"><div class="mi-w"><span class="nm">特製 生姜中華そば</span><span class="dots"></span><span class="pr">¥1,200</span><span class="ds">チャーシュー増し・味玉・海苔増しの全部のせ</span></div></div>
+      <div class="mi" data-cat="soba"><div class="mi-w"><span class="nm">淡色醤油の貝ダシ中華そば</span><span class="dots"></span><span class="pr">¥950</span><span class="ds">しじみ・帆立・浅利の贅沢な貝出汁</span></div></div>
+      <div class="mi" data-cat="soba"><div class="mi-w"><span class="nm">特製 貝ダシ中華そば</span><span class="dots"></span><span class="pr">¥1,200</span><span class="ds">貝ダシに全部のせの満足の一杯</span></div></div>
+      <div class="mi" data-cat="tsuke"><div class="mi-w"><span class="nm">煮干しつけそば</span><span class="dots"></span><span class="pr">¥1,000</span><span class="ds">煮干しの効いた濃厚つけ汁で。〆の割りスープまで</span></div></div>
+      <div class="mi" data-cat="tsuke"><div class="mi-w"><span class="nm">煮干しまぜそば<span class="tag">人気</span></span><span class="dots"></span><span class="pr">¥950</span><span class="ds">卓上の生卵と相性抜群。よく混ぜてどうぞ</span></div></div>
+      <div class="mi" data-cat="gohan"><div class="mi-w"><span class="nm">炙りレアチャーシュー丼<span class="tag">名物</span></span><span class="dots"></span><span class="pr">¥450</span><span class="ds">特製塩麹に漬け込み低温調理。炙りの香ばしさ</span></div></div>
+      <div class="mi" data-cat="gohan"><div class="mi-w"><span class="nm">炙りチャーシューマヨ丼</span><span class="dots"></span><span class="pr">¥450</span><span class="ds">背徳の組み合わせ。ラーメンのお供に</span></div></div>
+      <div class="mi" data-cat="gohan"><div class="mi-w"><span class="nm">まぶし唐揚げ丼</span><span class="dots"></span><span class="pr">¥450</span><span class="ds">サクサク唐揚げに特製ダレをまぶして</span></div></div>
+      <div class="mi" data-cat="gohan"><div class="mi-w"><span class="nm">白ご飯(あきたこまち)</span><span class="dots"></span><span class="pr">¥150</span><span class="ds">秋田県大潟村直送・特別栽培米。卓上の生卵でTKGに</span></div></div>
+    </div>
+    <p class="menu-note">※価格の一部はデモ用の参考表記です。仕入れ状況により内容が変わる場合がございます。スープがなくなり次第終了。</p>
+  </div>
+</section>
+
+<section class="taku" id="takujou">
+  <div class="wrap center">
+    <span class="label">卓上の楽しみ ｜ FREE TOPPINGS</span>
+    <h2 class="sec-title">卓上は、遊び場です。</h2>
+    <p class="lead">那由多名物、卓上の無料サービス。一杯のラーメンを、最後のひと口まで飽きさせません。</p>
+    <div class="taku-grid">
+      <div class="tk reveal"><div class="ic">🥚</div><h3>生卵<span class="free">使い放題</span></h3><p>まぜそばに落とすもよし、白ご飯で極上TKGを作るもよし。使い方はあなた次第。</p></div>
+      <div class="tk reveal"><div class="ic">🌊</div><h3>海苔<span class="free">使い放題</span></h3><p>スープに浸してご飯に巻く——それが那由多流。何枚でもどうぞ。</p></div>
+      <div class="tk reveal"><div class="ic">🫚</div><h3>生姜醤・昆布酢<span class="free">無料</span></h3><p>味変の名脇役。途中で加えれば、一杯目とはまるで別の表情に。</p></div>
+    </div>
+    <div class="howto reveal">
+      <h3><span class="fude">那由多流</span>、おいしい食べ方</h3>
+      <div class="step-l"><i>一</i><div><b>まずはそのまま、スープをひと口</b><p>生姜の香りと熟成醤油の深みを、まっさらな舌で。</p></div></div>
+      <div class="step-l"><i>二</i><div><b>麺と、レアチャーシューを</b><p>全粒粉細麺の喉ごしと、しっとり柔らかな炙りの香ばしさを。</p></div></div>
+      <div class="step-l"><i>三</i><div><b>中盤、生姜醤と昆布酢で味変</b><p>キレが増し、また新しい一杯が始まります。</p></div></div>
+      <div class="step-l"><i>四</i><div><b>〆は残りスープで、たまごかけご飯</b><p>卓上の生卵と海苔、あきたこまち。これが「ご飯がススムラーメン屋」の真骨頂。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="rice">
+  <div class="bg"><img src="images/rice.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1516684732162-798a0062be99?auto=format&fit=crop&w=1600&q=80'" alt="ご飯"></div>
+  <div class="wrap">
+    <div class="rice-grid">
+      <div class="reveal">
+        <span class="label">米へのこだわり ｜ RICE</span>
+        <h2>米どころ・秋田<em>大潟村</em>から、<br>直送しています。</h2>
+        <p>「ご飯がススム」と名乗るからには、ご飯にも一切妥協しません。使用するのは、秋田県大潟村から直送される特別栽培米あきたこまち。粒立ちの良さと冷めても続く甘みが自慢です。</p>
+        <div class="don"><b>炙りレアチャーシュー丼</b><span>¥450</span><p>特製塩麹に漬け込み低温調理したチャーシューを、注文ごとに炙って。スープとの相性は言わずもがな。</p></div>
+      </div>
+      <div class="rice-img reveal">
+        <img src="images/chashu-don.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1580822184713-fc5400e7fe10?auto=format&fit=crop&w=800&q=80'" alt="炙りレアチャーシュー丼">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="wrap center">
+    <span class="label">ギャラリー ｜ GALLERY</span>
+    <h2 class="sec-title">一杯の風景</h2>
+    <div class="g-grid reveal" id="gg">
+      <a data-i="0"><img src="images/gallery-1.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80'" alt=""></a>
+      <a data-i="1"><img src="images/gallery-2.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1591814468924-caf88d1232e1?auto=format&fit=crop&w=500&q=80'" alt=""></a>
+      <a data-i="2"><img src="images/gallery-3.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1623341214825-9f4f963727da?auto=format&fit=crop&w=500&q=80'" alt=""></a>
+      <a data-i="3"><img src="images/gallery-4.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1557872943-16a5ac26437e?auto=format&fit=crop&w=500&q=80'" alt=""></a>
+      <a data-i="4"><img src="images/gallery-5.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=crop&w=600&q=80'" alt=""></a>
+      <a data-i="5"><img src="images/gallery-6.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1580822184713-fc5400e7fe10?auto=format&fit=crop&w=500&q=80'" alt=""></a>
+      <a data-i="6"><img src="images/gallery-7.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1526318896980-cf78c088247c?auto=format&fit=crop&w=500&q=80'" alt=""></a>
+      <a data-i="7"><img src="images/gallery-8.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1516684732162-798a0062be99?auto=format&fit=crop&w=500&q=80'" alt=""></a>
+    </div>
+  </div>
+</section>
+
+<section class="voice">
+  <div class="wrap center">
+    <span class="label">お客様の声 ｜ VOICE</span>
+    <h2 class="sec-title">すすった人の、声。</h2>
+    <div class="slider" id="slider">
+      <div class="slide active"><div class="stars">★★★★★</div><p>「生姜の香りがふわっと立ち上がって、スープが染みる。〆のたまごかけご飯まで含めて、ひとつの物語でした。」</p><cite>— 40代・男性</cite></div>
+      <div class="slide"><div class="stars">★★★★★</div><p>「生卵と海苔が使い放題って太っ腹すぎる。まぜそば+生卵の組み合わせが最高でした。」</p><cite>— 20代・男性</cite></div>
+      <div class="slide"><div class="stars">★★★★★</div><p>「店内が綺麗で女性ひとりでも入りやすい。貝ダシの上品なスープ、また食べに行きます。」</p><cite>— 30代・女性</cite></div>
+    </div>
+    <div class="dots" id="dots"></div>
+  </div>
+</section>
+
+<section class="insta">
+  <div class="wrap center">
+    <span class="label">インスタグラム ｜ INSTAGRAM</span>
+    <div class="insta-head"><a href="https://www.instagram.com/chukasoba.nayuta/" target="_blank" rel="noopener">@chukasoba.nayuta</a></div>
+    <p class="lead">限定メニューや営業情報はInstagramでお知らせしています。</p>
+    <div class="ig-grid reveal">
+      <a href="https://www.instagram.com/chukasoba.nayuta/" target="_blank" rel="noopener"><img src="images/insta-1.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=400&q=80'" alt=""></a>
+      <a href="https://www.instagram.com/chukasoba.nayuta/" target="_blank" rel="noopener"><img src="images/insta-2.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1591814468924-caf88d1232e1?auto=format&fit=crop&w=400&q=80'" alt=""></a>
+      <a href="https://www.instagram.com/chukasoba.nayuta/" target="_blank" rel="noopener"><img src="images/insta-3.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1623341214825-9f4f963727da?auto=format&fit=crop&w=400&q=80'" alt=""></a>
+      <a href="https://www.instagram.com/chukasoba.nayuta/" target="_blank" rel="noopener"><img src="images/insta-4.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1557872943-16a5ac26437e?auto=format&fit=crop&w=400&q=80'" alt=""></a>
+      <a href="https://www.instagram.com/chukasoba.nayuta/" target="_blank" rel="noopener"><img src="images/insta-5.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=crop&w=400&q=80'" alt=""></a>
+      <a href="https://www.instagram.com/chukasoba.nayuta/" target="_blank" rel="noopener"><img src="images/insta-6.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1580822184713-fc5400e7fe10?auto=format&fit=crop&w=400&q=80'" alt=""></a>
+    </div>
+  </div>
+</section>
+
+<section class="faqsec">
+  <div class="wrap">
+    <div class="center"><span class="label">よくあるご質問 ｜ FAQ</span><h2 class="sec-title">よくあるご質問</h2></div>
+    <div class="faq-wrap">
+      <div class="faq"><q>行列はできますか?待ち時間は?<em>＋</em></q><div class="a">お昼のピーク(12時前後)はお待ちいただくことがあります。開店直後や14時以降が比較的スムーズです。スープがなくなり次第終了となりますのでご了承ください。</div></div>
+      <div class="faq"><q>子ども連れでも大丈夫ですか?<em>＋</em></q><div class="a">テーブル席がございますので、お子様連れでもご利用いただけます。</div></div>
+      <div class="faq"><q>支払い方法は?<em>＋</em></q><div class="a">券売機での食券制です。詳しいお支払い方法は店頭にてご確認ください。</div></div>
+      <div class="faq"><q>本当に生卵と海苔は使い放題ですか?<em>＋</em></q><div class="a">はい、卓上の生卵と海苔はご自由にお使いいただけます。ぜひ〆のたまごかけご飯までお楽しみください。</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="access" id="access">
+  <div class="wrap">
+    <div class="center"><span class="label">店舗案内 ｜ ACCESS</span><h2 class="sec-title">店舗案内</h2></div>
+    <div class="acc-grid">
+      <div class="reveal">
+        <dl>
+          <dt>店名</dt><dd><b>中華そば 那由多(なゆた)</b></dd>
+          <dt>住所</dt><dd>〒532-0023 大阪府大阪市淀川区十三東3-28-14</dd>
+          <dt>電話</dt><dd><a href="tel:0663007553"><b>06-6300-7553</b></a></dd>
+          <dt>営業時間</dt><dd>昼 11:00–15:00(L.O.14:30)<br>夜 17:30–22:00(L.O.21:30)<br><b>※スープがなくなり次第終了</b></dd>
+          <dt>定休日</dt><dd>無休</dd>
+          <dt>席数</dt><dd>約18〜20席(カウンター・テーブル)</dd>
+          <dt>アクセス</dt><dd>阪急「十三駅」東口より北東へ<b>徒歩3分</b><br>十三東三仲町商店街内</dd>
+        </dl>
+      </div>
+      <div class="map reveal">
+        <iframe src="https://www.google.com/maps?q=大阪市淀川区十三東3-28-14&output=embed" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="logo">
+      <svg class="en" width="42" height="42" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="#c73e3a" stroke-width="2.5" stroke-dasharray="120 18" stroke-linecap="round"/><text x="24" y="31" text-anchor="middle" fill="#f2ede4" font-size="18" font-family="Shippori Mincho,serif" font-weight="700">那</text></svg>
+    </div>
+    <div style="font-family:'Shippori Mincho';font-size:19px;letter-spacing:.24em;margin-top:10px">中華そば 那由多</div>
+    <nav class="fnav">
+      <a href="#kodawari">こだわり</a><a href="#nihonbashira">二本柱</a><a href="#oshinagaki">お品書き</a><a href="#takujou">卓上の楽しみ</a><a href="#access">店舗案内</a>
+    </nav>
+    <div class="sns">
+      <a href="https://www.instagram.com/chukasoba.nayuta/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.2A6.6 6.6 0 1018.6 12 6.6 6.6 0 0012 5.4zm0 10.9A4.3 4.3 0 1116.3 12 4.3 4.3 0 0112 16.3zm6.8-11.1a1.5 1.5 0 11-1.5-1.5 1.5 1.5 0 011.5 1.5z"/></svg></a>
+      <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.9 2h3.3l-7.2 8.3L23.5 22h-6.6l-5.2-6.8L5.8 22H2.5l7.7-8.8L2 2h6.8l4.7 6.2zm-1.2 18h1.8L7.4 3.8H5.5z"/></svg></a>
+    </div>
+    <div class="copy">© 2024 中華そば 那由多. All Rights Reserved.｜このサイトは制作サンプル(デモ)です。</div>
+  </div>
+</footer>
+
+<div id="lb"><span class="x">✕</span><span class="nav-a prev">‹</span><img src="" alt=""><span class="nav-a next">›</span></div>
+<div class="mcta"><a href="tel:0663007553" class="call">☎ 電話する</a><a href="#access" class="map-a">📍 アクセス</a></div>
+<div id="top">↑</div>
+
+<script>
+// preloader(最大2.5秒で必ず消える)
+const hidePre=()=>document.getElementById('pre').classList.add('done');
+addEventListener('load',()=>setTimeout(hidePre,500));
+setTimeout(hidePre,2500);
+// header + progress + parallax + backtop
+const hd=document.getElementById('hd'),prog=document.getElementById('prog'),topBtn=document.getElementById('top'),heroBg=document.getElementById('heroBg');
+addEventListener('scroll',()=>{
+  const y=scrollY,h=document.documentElement.scrollHeight-innerHeight;
+  hd.classList.toggle('scrolled',y>60);
+  prog.style.width=(y/h*100)+'%';
+  topBtn.classList.toggle('show',y>500);
+  if(heroBg&&y<innerHeight)heroBg.style.transform='translateY('+(y*.25)+'px)';
+});
+topBtn.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+// mobile menu
+const bg=document.getElementById('bg'),mn=document.getElementById('mn');
+bg.onclick=()=>mn.classList.toggle('open');
+mn.querySelectorAll('a').forEach(a=>a.onclick=()=>mn.classList.remove('open'));
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+// counters(小数対応)
+const co=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){
+  const el=e.target,to=parseFloat(el.dataset.to),dec=(String(el.dataset.to).split('.')[1]||'').length;
+  let n=0;const step=to/60||0;
+  if(to===0){el.textContent='0';co.unobserve(el);return}
+  const t=setInterval(()=>{n+=step;if(n>=to){n=to;clearInterval(t)}el.textContent=n.toFixed(dec)},18);
+  co.unobserve(el)}}),{threshold:.6});
+document.querySelectorAll('.stat b').forEach(el=>co.observe(el));
+// menu filter
+document.getElementById('filter').addEventListener('click',e=>{
+  if(e.target.tagName!=='BUTTON')return;
+  document.querySelectorAll('#filter button').forEach(b=>b.classList.remove('active'));
+  e.target.classList.add('active');
+  const f=e.target.dataset.f;
+  document.querySelectorAll('#mlist .mi').forEach(c=>c.classList.toggle('hide',f!=='all'&&c.dataset.cat!==f));
+});
+// lightbox
+const gg=document.getElementById('gg'),lb=document.getElementById('lb'),lbImg=lb.querySelector('img'),imgs=[...gg.querySelectorAll('img')];
+let ci=0;
+function show(i){ci=(i+imgs.length)%imgs.length;lbImg.src=imgs[ci].src;lb.classList.add('open')}
+gg.querySelectorAll('a').forEach(a=>a.onclick=()=>show(+a.dataset.i));
+lb.querySelector('.x').onclick=()=>lb.classList.remove('open');
+lb.querySelector('.prev').onclick=e=>{e.stopPropagation();show(ci-1)};
+lb.querySelector('.next').onclick=e=>{e.stopPropagation();show(ci+1)};
+lb.onclick=e=>{if(e.target===lb)lb.classList.remove('open')};
+addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')lb.classList.remove('open');if(e.key==='ArrowLeft')show(ci-1);if(e.key==='ArrowRight')show(ci+1)});
+// faq
+document.querySelectorAll('.faq q').forEach(q=>q.onclick=()=>q.parentElement.classList.toggle('open'));
+// voice slider
+const slides=[...document.querySelectorAll('.slide')],dots=document.getElementById('dots');
+slides.forEach((s,i)=>{const d=document.createElement('i');if(!i)d.classList.add('on');d.onclick=()=>go(i);dots.appendChild(d)});
+let si=0;
+function go(i){slides[si].classList.remove('active');dots.children[si].classList.remove('on');si=i;slides[si].classList.add('active');dots.children[si].classList.add('on')}
+setInterval(()=>go((si+1)%slides.length),5000);
+</script>
+</body>
+</html>

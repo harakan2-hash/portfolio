@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>サンタプレ SANTAPULE ｜ 熊本のケーキ屋さん｜夢見心地の“我輩ロール”</title>
+<meta name="description" content="熊本のケーキ屋「サンタプレ」。夢見心地のふわふわ食感、看板の“我輩ロール”をはじめ、季節のタルトや焼き菓子をお届けします。城山本店・上熊本店。オーダーケーキ承ります。">
+<meta name="theme-color" content="#d94a56">
+<!-- OGP -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="サンタプレ SANTAPULE ｜ 熊本のケーキ屋さん">
+<meta property="og:description" content="夢見心地のふわふわ“我輩ロール”。熊本のケーキ屋さん、サンタプレ。">
+<meta property="og:locale" content="ja_JP">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='23' fill='%23d94a56'/%3E%3Cpath d='M14 30c0-1 .8-1.6 2-2l8-3 8 3c1.2.4 2 1 2 2v2H14z' fill='white'/%3E%3Ccircle cx='34' cy='15' r='3' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Noto+Serif+JP:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<!-- 構造化データ(SEO) -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Bakery","name":"サンタプレ (SANTAPULE)","image":"","servesCuisine":"ケーキ・洋菓子","priceRange":"¥¥","telephone":"+81-96-283-1123","address":{"@type":"PostalAddress","addressRegion":"熊本県","addressLocality":"熊本市西区","streetAddress":"上代10丁目12-5","addressCountry":"JP"},"openingHours":"Mo-Su 10:00-19:00"}
+</script>
+<style>
+:root{
+  --red:#d94a56;--red-deep:#bd3742;--berry:#a52a3a;--gold:#d0a85f;
+  --cream:#fffaf4;--cream-2:#fdefe2;--card:#fffaf4;--line:#efe0d2;
+  --text:#4d3f39;--brown:#4a3a34;--brown-soft:#8c7268;
+  --nav-bg:rgba(255,250,244,.95);--shadow:rgba(74,58,52,.12);
+}
+:root[data-theme="dark"]{
+  --cream:#1a1512;--cream-2:#221a16;--card:#241b17;--line:#3a2c26;
+  --text:#f1e7df;--brown:#f1e7df;--brown-soft:#c2ac9f;
+  --nav-bg:rgba(26,21,18,.95);--shadow:rgba(0,0,0,.45);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--cream);line-height:1.9;overflow-x:hidden;transition:background .5s,color .5s}
+h1,h2,h3{font-family:'Noto Serif JP',serif}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.center{text-align:center}
+
+/* preloader */
+#pre{position:fixed;inset:0;z-index:9999;background:var(--berry);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;transition:opacity .7s,visibility .7s}
+#pre.done{opacity:0;visibility:hidden}
+#pre svg{width:64px;height:64px;animation:pop 1.4s ease-in-out infinite}
+#pre .pl-txt{color:#fff;font-family:'Cormorant Garamond',serif;letter-spacing:.4em;font-size:15px;opacity:.9;padding-left:.4em}
+#pre .bar{width:140px;height:2px;background:rgba(255,255,255,.25);border-radius:2px;overflow:hidden}
+#pre .bar i{display:block;height:100%;width:0;background:#fff;animation:load 1.5s ease forwards}
+@keyframes pop{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+@keyframes load{to{width:100%}}
+
+/* scroll progress */
+#prog{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--red),var(--gold));z-index:200;transition:width .1s}
+
+/* header */
+header{position:fixed;top:0;left:0;width:100%;z-index:100;padding:20px 0;transition:.4s}
+header.scrolled{background:var(--nav-bg);backdrop-filter:blur(8px);padding:12px 0;box-shadow:0 4px 24px var(--shadow)}
+.nav{display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;color:#fff;transition:.4s}
+header.scrolled .logo{color:var(--berry)}
+:root[data-theme="dark"] header.scrolled .logo{color:#fff}
+.logo .mark{width:38px;height:38px;flex:0 0 38px}
+.logo .txt{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;letter-spacing:.1em;line-height:1}
+.logo .txt small{display:block;font-family:'Noto Serif JP';font-size:10px;letter-spacing:.35em;font-weight:400;margin-top:3px;opacity:.85}
+.menu{display:flex;gap:30px;align-items:center}
+.menu a{color:#fff;font-size:13.5px;letter-spacing:.1em;transition:.3s;position:relative}
+header.scrolled .menu a{color:var(--text)}
+.menu a:not(.btn)::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:currentColor;transition:.3s}
+.menu a:not(.btn):hover::after{width:100%}
+.btn{background:var(--red);color:#fff!important;padding:11px 24px;border-radius:40px;font-size:13px;letter-spacing:.08em;transition:.3s;border:1px solid var(--red)}
+.btn:hover{background:transparent;color:var(--red)!important}
+header.scrolled .btn{color:#fff!important}
+header.scrolled .btn:hover{color:var(--red)!important}
+#theme{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#fff;transition:.3s;flex:0 0 38px}
+header.scrolled #theme{border-color:var(--line);color:var(--text)}
+#theme:hover{background:var(--red);border-color:var(--red);color:#fff}
+#theme svg{width:17px;height:17px}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:110}
+.burger span{width:26px;height:2px;background:#fff;transition:.3s}
+header.scrolled .burger span{background:var(--berry)}
+:root[data-theme="dark"] header.scrolled .burger span{background:#fff}
+
+/* hero */
+.hero{height:100vh;min-height:620px;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden}
+.hero .bg{position:absolute;inset:-8% 0;z-index:0}
+.hero .bg img{width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(90,45,45,.32),rgba(90,45,45,.5));z-index:1}
+.hero-inner{position:relative;z-index:2;opacity:0;transform:translateY(30px);animation:up 1.2s .3s forwards}
+.hero .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;letter-spacing:.1em;margin-bottom:16px;opacity:.95}
+.hero h1{font-size:clamp(32px,6vw,60px);font-weight:500;line-height:1.55;letter-spacing:.08em;text-shadow:0 2px 20px rgba(0,0,0,.22)}
+.hero p.tag{margin-top:22px;font-size:15px;letter-spacing:.1em;font-weight:300}
+.scroll-ind{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:2;font-family:'Cormorant Garamond';font-size:12px;letter-spacing:.3em;color:#fff;opacity:.9}
+.scroll-ind::after{content:"";display:block;width:1px;height:44px;background:#fff;margin:10px auto 0;animation:line 2s infinite}
+@keyframes line{0%,100%{transform:scaleY(.3);opacity:.3}50%{transform:scaleY(1);opacity:1}}
+@keyframes up{to{opacity:1;transform:translateY(0)}}
+
+/* marquee ribbon */
+.ribbon{background:var(--red);color:#fff;padding:12px 0;overflow:hidden;white-space:nowrap}
+.ribbon .track{display:inline-block;animation:marq 26s linear infinite;font-family:'Cormorant Garamond';letter-spacing:.2em;font-size:14px}
+.ribbon .track span{margin:0 26px}
+.ribbon .track span::after{content:"✦";margin-left:52px;opacity:.7}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* section base */
+section{padding:110px 0}
+.label{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:.32em;color:var(--red);text-transform:uppercase;margin-bottom:14px;display:block}
+.sec-title{font-size:clamp(26px,4vw,38px);font-weight:500;letter-spacing:.08em;line-height:1.5;margin-bottom:22px}
+.lead{color:var(--brown-soft);font-weight:300;max-width:640px;margin:0 auto}
+
+/* concept */
+.concept-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;margin-top:20px}
+.concept-txt h2{font-size:clamp(23px,3.3vw,33px);font-weight:500;line-height:1.7;margin-bottom:26px}
+.concept-txt p{color:var(--brown-soft);font-weight:300;margin-bottom:18px}
+.concept-img{position:relative}
+.concept-img img{border-radius:6px;box-shadow:0 30px 60px var(--shadow)}
+.concept-img .badge{position:absolute;bottom:-30px;left:-30px;background:var(--red);color:#fff;border-radius:50%;width:150px;height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 16px 40px rgba(189,55,66,.35);text-align:center}
+.concept-img .badge b{font-family:'Noto Serif JP';font-size:16px;font-weight:600;line-height:1.4}
+.concept-img .badge span{font-family:'Cormorant Garamond';font-size:12px;letter-spacing:.15em;margin-top:6px;opacity:.9}
+
+/* stats */
+.stats{background:var(--cream-2)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.stat b{font-family:'Cormorant Garamond';font-size:clamp(40px,6vw,60px);font-weight:600;color:var(--red);line-height:1;display:block}
+.stat .u{font-size:18px;color:var(--red)}
+.stat span{display:block;margin-top:10px;font-size:13px;letter-spacing:.08em;color:var(--brown-soft)}
+
+/* signature */
+.signature{background:var(--berry);color:#fff;overflow:hidden}
+.sig-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center}
+.sig-img{position:relative}
+.sig-img img{border-radius:8px;box-shadow:0 30px 70px rgba(0,0,0,.35)}
+.sig-img .tag{position:absolute;top:-18px;left:-18px;background:var(--gold);color:#4a2b2b;font-weight:700;font-size:13px;letter-spacing:.1em;padding:10px 20px;border-radius:40px;box-shadow:0 10px 24px rgba(0,0,0,.25)}
+.sig-txt .label{color:#f3c9ce}
+.sig-txt h2{font-size:clamp(28px,4.2vw,44px);font-weight:600;line-height:1.4;margin-bottom:20px;letter-spacing:.04em}
+.sig-txt h2 em{font-style:normal;color:#ffd9a0}
+.sig-txt p{font-weight:300;opacity:.94;margin-bottom:16px}
+.sig-price{display:inline-flex;align-items:baseline;gap:8px;margin-top:16px;padding:12px 26px;background:rgba(255,255,255,.12);border-radius:40px}
+.sig-price b{font-family:'Cormorant Garamond';font-size:28px;font-weight:600;color:#ffd9a0}
+.sig-price small{font-size:12px;opacity:.85}
+
+/* menu + filter */
+.menu-sec{background:var(--cream)}
+.filter{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:36px 0 8px}
+.filter button{border:1px solid var(--line);background:transparent;color:var(--brown-soft);padding:9px 22px;border-radius:40px;font-family:inherit;font-size:13px;letter-spacing:.06em;cursor:pointer;transition:.3s}
+.filter button.active,.filter button:hover{background:var(--red);border-color:var(--red);color:#fff}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:36px}
+.card{background:var(--card);border-radius:8px;overflow:hidden;transition:.45s;box-shadow:0 10px 30px var(--shadow);border:1px solid var(--line)}
+.card.hide{display:none}
+.card:hover{transform:translateY(-8px);box-shadow:0 26px 50px var(--shadow)}
+.card .ph{height:210px;overflow:hidden;position:relative}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:.6s}
+.card:hover .ph img{transform:scale(1.07)}
+.card .ph .pop{position:absolute;top:12px;left:12px;background:var(--red);color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;padding:5px 12px;border-radius:20px}
+.card-body{padding:22px 24px 26px}
+.card-body h3{font-size:18px;font-weight:500;margin-bottom:6px}
+.card-body .price{font-family:'Cormorant Garamond';font-size:19px;color:var(--red);font-weight:600;margin-bottom:10px}
+.card-body p{font-size:13px;color:var(--brown-soft);font-weight:300}
+
+/* gallery */
+.gallery{background:var(--cream-2)}
+.g-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:52px}
+.g-grid a{overflow:hidden;border-radius:4px;aspect-ratio:1;cursor:pointer;position:relative}
+.g-grid img{width:100%;height:100%;object-fit:cover;transition:.6s}
+.g-grid a::after{content:"＋";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:26px;background:rgba(165,42,58,.0);opacity:0;transition:.4s}
+.g-grid a:hover img{transform:scale(1.1)}
+.g-grid a:hover::after{background:rgba(165,42,58,.35);opacity:1}
+.g-grid a:nth-child(1),.g-grid a:nth-child(6){grid-row:span 2;aspect-ratio:auto}
+
+/* lightbox */
+#lb{position:fixed;inset:0;z-index:500;background:rgba(30,15,15,.92);display:none;align-items:center;justify-content:center}
+#lb.open{display:flex}
+#lb img{max-width:88%;max-height:82%;border-radius:6px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+#lb .x,#lb .nav-a{position:absolute;color:#fff;cursor:pointer;user-select:none;transition:.3s}
+#lb .x{top:24px;right:32px;font-size:34px}
+#lb .nav-a{top:50%;transform:translateY(-50%);font-size:46px;width:60px;text-align:center;opacity:.7}
+#lb .nav-a:hover,#lb .x:hover{opacity:1;color:var(--gold)}
+#lb .prev{left:10px}#lb .next{right:10px}
+
+/* instagram */
+.insta{background:var(--cream)}
+.insta-head{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:6px}
+.insta-head a{font-family:'Cormorant Garamond';font-size:20px;letter-spacing:.06em;color:var(--red);font-weight:600}
+.ig-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:44px}
+.ig-grid a{aspect-ratio:1;overflow:hidden;border-radius:6px;position:relative}
+.ig-grid img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.ig-grid a::after{content:"";position:absolute;inset:0;background:rgba(217,74,86,0);transition:.4s}
+.ig-grid a:hover img{transform:scale(1.08)}
+.ig-grid a:hover::after{background:rgba(217,74,86,.22)}
+
+/* testimonials */
+.voice{background:var(--cream-2)}
+.slider{max-width:760px;margin:44px auto 0;position:relative;min-height:180px}
+.slide{opacity:0;position:absolute;inset:0;transition:.7s;text-align:center;pointer-events:none}
+.slide.active{opacity:1;position:relative;pointer-events:auto}
+.slide .stars{color:var(--gold);letter-spacing:.2em;margin-bottom:16px}
+.slide p{font-size:clamp(17px,2.4vw,21px);font-family:'Noto Serif JP';font-weight:400;line-height:1.9;color:var(--text)}
+.slide cite{display:block;margin-top:18px;font-style:normal;font-size:13px;color:var(--brown-soft);letter-spacing:.08em}
+.dots{display:flex;gap:10px;justify-content:center;margin-top:30px}
+.dots i{width:9px;height:9px;border-radius:50%;background:var(--line);cursor:pointer;transition:.3s}
+.dots i.on{background:var(--red);transform:scale(1.25)}
+
+/* order cta */
+.order{color:#fff;text-align:center;position:relative;overflow:hidden}
+.order .bg{position:absolute;inset:0;z-index:0}
+.order .bg img{width:100%;height:100%;object-fit:cover}
+.order::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(90,45,45,.6),rgba(90,45,45,.68));z-index:1}
+.order .wrap{position:relative;z-index:2}
+.order h2{font-size:clamp(26px,4vw,40px);font-weight:500;letter-spacing:.08em;line-height:1.6;margin-bottom:22px}
+.order p{font-weight:300;max-width:560px;margin:0 auto 38px;opacity:.95}
+.btn-lg{display:inline-block;background:var(--red);color:#fff;padding:16px 44px;border-radius:40px;letter-spacing:.12em;font-size:14px;transition:.4s;border:1px solid #fff}
+.btn-lg:hover{background:#fff;color:var(--red)}
+
+/* faq */
+.faq-wrap{max-width:760px;margin:48px auto 0}
+.faq{border-bottom:1px solid var(--line)}
+.faq q{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 4px;cursor:pointer;font-weight:500;font-style:normal;font-size:15.5px}
+.faq q::before{content:"Q";font-family:'Cormorant Garamond';color:var(--red);font-size:20px;margin-right:14px}
+.faq q em{margin-left:auto;font-style:normal;color:var(--red);font-size:22px;transition:.3s;flex:0 0 auto}
+.faq.open q em{transform:rotate(45deg)}
+.faq .a{max-height:0;overflow:hidden;transition:.4s;color:var(--brown-soft);font-weight:300;font-size:14px}
+.faq.open .a{max-height:200px;padding:0 4px 22px 34px}
+
+/* stores */
+.info{background:var(--cream)}
+.stores{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:52px;text-align:left}
+.store{background:var(--card);border-radius:10px;overflow:hidden;box-shadow:0 12px 34px var(--shadow);border:1px solid var(--line)}
+.store .sh{height:190px;overflow:hidden;position:relative}
+.store .sh img{width:100%;height:100%;object-fit:cover}
+.store .sh .name{position:absolute;bottom:0;left:0;width:100%;padding:26px 24px 16px;background:linear-gradient(transparent,rgba(74,58,52,.8));color:#fff}
+.store .sh .name b{font-family:'Noto Serif JP';font-size:22px;font-weight:600;letter-spacing:.06em}
+.store .sh .name span{font-family:'Cormorant Garamond';font-size:12px;letter-spacing:.2em;opacity:.9;display:block}
+.store dl{display:grid;grid-template-columns:74px 1fr;padding:22px 26px 26px;row-gap:14px}
+.store dt{font-family:'Cormorant Garamond';letter-spacing:.08em;color:var(--red);font-size:14px}
+.store dd{font-weight:300;font-size:14px}
+.store dd a{color:var(--red-deep);font-weight:500}
+.map{margin-top:36px;border-radius:8px;overflow:hidden;box-shadow:0 20px 44px var(--shadow);height:320px}
+.map iframe{width:100%;height:100%;border:0;filter:grayscale(.15) sepia(.08)}
+
+/* contact form */
+.contact{background:var(--cream-2)}
+.form{max-width:640px;margin:44px auto 0;background:var(--card);padding:44px 40px;border-radius:12px;box-shadow:0 16px 44px var(--shadow);border:1px solid var(--line)}
+.form .row{margin-bottom:20px}
+.form label{display:block;font-size:13px;letter-spacing:.06em;margin-bottom:8px;color:var(--text)}
+.form label .req{color:var(--red);font-size:11px;margin-left:6px}
+.form input,.form textarea,.form select{width:100%;padding:13px 16px;border:1px solid var(--line);border-radius:8px;background:var(--cream);color:var(--text);font-family:inherit;font-size:14px;transition:.3s}
+.form input:focus,.form textarea:focus,.form select:focus{outline:none;border-color:var(--red);box-shadow:0 0 0 3px rgba(217,74,86,.12)}
+.form .err{color:var(--red);font-size:12px;margin-top:6px;display:none}
+.form .invalid input,.form .invalid textarea{border-color:var(--red)}
+.form .invalid .err{display:block}
+.form button{width:100%;background:var(--red);color:#fff;border:none;padding:16px;border-radius:40px;font-family:inherit;font-size:15px;letter-spacing:.1em;cursor:pointer;transition:.3s;margin-top:6px}
+.form button:hover{background:var(--berry)}
+.form .ok{display:none;text-align:center;padding:30px 0;color:var(--red);font-weight:500}
+.form.sent .fields{display:none}
+.form.sent .ok{display:block}
+
+/* footer */
+footer{background:var(--brown);color:#f3e9df;padding:66px 0 90px;text-align:center}
+:root[data-theme="dark"] footer{background:#120d0b}
+footer .logo{justify-content:center;color:#fff;margin-bottom:6px}
+footer .logo .txt small{color:#f0b7bd}
+footer .fnav{display:flex;gap:26px;justify-content:center;margin:26px 0;flex-wrap:wrap}
+footer .fnav a{font-size:13px;letter-spacing:.1em;opacity:.85;transition:.3s}
+footer .fnav a:hover{opacity:1;color:#f0b7bd}
+footer .sns{display:flex;gap:16px;justify-content:center;margin-bottom:26px}
+footer .sns a{width:40px;height:40px;border:1px solid rgba(255,255,255,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:.3s}
+footer .sns a:hover{background:var(--red);border-color:var(--red)}
+footer .sns svg{width:17px;height:17px;fill:#f3e9df}
+footer .copy{font-size:11px;opacity:.5;letter-spacing:.1em;margin-top:18px}
+
+/* sticky mobile cta */
+.mcta{position:fixed;bottom:0;left:0;width:100%;z-index:90;display:none;background:var(--card);border-top:1px solid var(--line);box-shadow:0 -6px 20px var(--shadow)}
+.mcta a{flex:1;text-align:center;padding:14px 0;font-size:13px;letter-spacing:.05em;font-weight:500}
+.mcta a.call{background:var(--red);color:#fff}
+.mcta a.map-a{color:var(--text)}
+
+/* back to top */
+#top{position:fixed;right:22px;bottom:22px;width:46px;height:46px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;pointer-events:none;transition:.4s;z-index:95;box-shadow:0 8px 22px rgba(189,55,66,.4)}
+#top.show{opacity:1;pointer-events:auto}
+#top:hover{background:var(--berry)}
+
+.reveal{opacity:0;transform:translateY(40px);transition:.9s cubic-bezier(.2,.7,.3,1)}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .concept-grid,.sig-grid,.stores{grid-template-columns:1fr;gap:44px}
+  .sig-img{order:-1}
+  .cards{grid-template-columns:1fr 1fr}
+  .ig-grid{grid-template-columns:repeat(3,1fr)}
+  .stats-grid{grid-template-columns:1fr 1fr;gap:36px 20px}
+  .concept-img .badge{width:120px;height:120px;left:auto;right:-10px;bottom:-22px}
+}
+@media(max-width:680px){
+  section{padding:76px 0}
+  .menu{position:fixed;top:0;right:-100%;height:100vh;width:78%;background:var(--cream);flex-direction:column;justify-content:center;gap:26px;transition:.45s;box-shadow:-10px 0 40px rgba(0,0,0,.14);padding:0 30px}
+  .menu.open{right:0}
+  .menu a{color:var(--text)!important}
+  .menu #theme{color:var(--text);border-color:var(--line)}
+  .burger{display:flex}
+  .cards,.g-grid{grid-template-columns:1fr 1fr}
+  .g-grid a:nth-child(1),.g-grid a:nth-child(6){grid-row:span 1;aspect-ratio:1}
+  .ig-grid{grid-template-columns:repeat(3,1fr)}
+  .concept-img .badge{width:104px;height:104px}
+  .mcta{display:flex}
+  footer{padding-bottom:110px}
+  #top{bottom:74px}
+}
+</style>
+</head>
+<body>
+
+<!-- preloader -->
+<div id="pre"><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="23" fill="#fff" opacity=".15"/><path d="M14 32c0-1.2 1-2 2.3-2.4l7.7-2.6 7.7 2.6c1.3.4 2.3 1.2 2.3 2.4v2H14z" fill="#fff"/><path d="M24 10l2.4 2.7 3.6-.6-.6 3.6L32 20l-3.7 1.7.6 3.6-3.6-.6L24 27l-2.9-2.3-3.6.6.6-3.6L14 20l3.7-1.7-.6-3.6 3.6.6z" fill="#fff"/><circle cx="34" cy="13" r="3.2" fill="#fff"/></svg><div class="pl-txt">SANTAPULE</div><div class="bar"><i></i></div></div>
+
+<div id="prog"></div>
+
+<header id="hd">
+  <div class="wrap nav">
+    <a href="#" class="logo">
+      <svg class="mark" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="23" fill="#d94a56"/><path d="M14 30c0-1 .8-1.6 2-2l8-3 8 3c1.2.4 2 1 2 2v2H14v-2z" fill="#fff"/><path d="M24 12l2.3 2.6 3.4-.6-.6 3.4L34 21l-3.5 1.6.6 3.4-3.4-.6L24 28l-2.3-2.6-3.4.6.6-3.4L14 21l3.5-1.6-.6-3.4 3.4.6L24 12z" fill="#fff" opacity=".9"/><circle cx="34" cy="15" r="3" fill="#fff"/></svg>
+      <span class="txt">SANTAPULE<small>サンタプレ</small></span>
+    </a>
+    <nav class="menu" id="mn">
+      <a href="#concept">CONCEPT</a>
+      <a href="#signature">我輩ロール</a>
+      <a href="#menu">MENU</a>
+      <a href="#insta">INSTAGRAM</a>
+      <a href="#info">SHOP</a>
+      <a href="order.html" class="btn">ケーキのご予約</a>
+      <button id="theme" aria-label="テーマ切替"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 108.5 12A7 7 0 0112 3z"/></svg></button>
+    </nav>
+    <div class="burger" id="bg"><span></span><span></span><span></span></div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="bg" id="heroBg"><img src="images/hero.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1600&q=80'" alt=""></div>
+  <div class="hero-inner">
+    <p class="sub">Sweets make you smile</p>
+    <h1>夢見心地の、<br>ふわふわを。</h1>
+    <p class="tag">熊本のケーキ屋さん　サンタプレ</p>
+  </div>
+  <div class="scroll-ind">SCROLL</div>
+</section>
+
+<div class="ribbon"><div class="track">
+  <span>WAGAHAI ROLL</span><span>SEASONAL TART</span><span>NEW YORK CHEESE CAKE</span><span>CROISSANT</span><span>CANELÉ</span><span>ORDER CAKE</span>
+  <span>WAGAHAI ROLL</span><span>SEASONAL TART</span><span>NEW YORK CHEESE CAKE</span><span>CROISSANT</span><span>CANELÉ</span><span>ORDER CAKE</span>
+</div></div>
+
+<section class="concept" id="concept">
+  <div class="wrap">
+    <div class="concept-grid">
+      <div class="concept-txt reveal">
+        <span class="label">Concept</span>
+        <h2>ひと口で、<br>笑顔になれるお菓子を。</h2>
+        <p>サンタの飾りが目印の、ちいさなケーキ屋さん。「食べた人が思わずにっこりしてしまう」——そんなお菓子づくりを大切にしています。</p>
+        <p>きめ細かくしっとりとした生地、さっぱり後を引くクリーム。素材の組み合わせにこだわり、毎日ひとつひとつ手づくりでお届けしています。</p>
+      </div>
+      <div class="concept-img reveal">
+        <img src="images/concept.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=900&q=80'" alt="つくり手">
+        <div class="badge"><b>毎日<br>手づくり</b><span>HANDMADE</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat reveal"><b data-to="2">0</b><span>熊本市内の店舗数</span></div>
+      <div class="stat reveal"><b data-to="40">0</b><span class="u">＋</span><span>商品ラインナップ</span></div>
+      <div class="stat reveal"><b data-to="1296">0</b><span class="u">円</span><span>一番人気「我輩ロール」</span></div>
+      <div class="stat reveal"><b data-to="100">0</b><span class="u">%</span><span>毎日、手づくり</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="signature" id="signature">
+  <div class="wrap">
+    <div class="sig-grid">
+      <div class="sig-img reveal">
+        <img src="images/wagahai-roll.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=900&q=80'" alt="我輩ロール">
+        <span class="tag">★ 一番人気</span>
+      </div>
+      <div class="sig-txt reveal">
+        <span class="label">Signature</span>
+        <h2>看板商品<br><em>「我輩ロール」</em></h2>
+        <p>“夢見心地”と評されるほど、ふわっふわの生地。たっぷり巻き込んだチーズクリームは、意外なほどさっぱり。「巻き終わりが見つからない」クリーム爆発タイプの、当店いちばんの自信作です。</p>
+        <p>手土産にも、自分へのごほうびにも。まずはこの一本から、サンタプレの世界へ。</p>
+        <div class="sig-price"><b>¥1,296</b><small>税込</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="menu-sec" id="menu">
+  <div class="wrap center">
+    <span class="label">Menu</span>
+    <h2 class="sec-title">人気のお菓子</h2>
+    <p class="lead">ロールケーキから焼き菓子まで。ショーケースには、その日いちばんおいしいお菓子が並びます。</p>
+    <div class="filter" id="filter">
+      <button class="active" data-f="all">すべて</button>
+      <button data-f="roll">ロールケーキ</button>
+      <button data-f="cake">ケーキ</button>
+      <button data-f="baked">焼き菓子</button>
+    </div>
+    <div class="cards" id="cards">
+      <div class="card reveal" data-cat="roll">
+        <div class="ph"><img src="images/menu-matcha.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1558326567-98ae2405596b?auto=format&fit=crop&w=600&q=80'" alt="抹茶んロール"><span class="pop">人気</span></div>
+        <div class="card-body"><h3>抹茶んロール</h3><div class="price">¥1,296</div><p>宇治抹茶を効かせた、ほろ苦大人味のロールケーキ。</p></div>
+      </div>
+      <div class="card reveal" data-cat="roll">
+        <div class="ph"><img src="images/menu-shiroyama.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1464349153735-7db50ed83c84?auto=format&fit=crop&w=600&q=80'" alt="城山ロール"></div>
+        <div class="card-body"><h3>城山ロール</h3><div class="price">¥1,080</div><p>ふんわり生地に生クリーム。素朴でやさしい定番の味。</p></div>
+      </div>
+      <div class="card reveal" data-cat="cake">
+        <div class="ph"><img src="images/menu-chocolat.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?auto=format&fit=crop&w=600&q=80'" alt="ショコラ"></div>
+        <div class="card-body"><h3>ショコラ</h3><div class="price">¥1,080</div><p>濃厚なチョコレートを重ねた、しっとり贅沢な一品。</p></div>
+      </div>
+      <div class="card reveal" data-cat="cake">
+        <div class="ph"><img src="images/menu-cheese.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=600&q=80'" alt="NYチーズケーキ"></div>
+        <div class="card-body"><h3>ニューヨークチーズケーキ</h3><div class="price">¥378</div><p>濃密なめらか。チーズの香りが口いっぱいに広がります。</p></div>
+      </div>
+      <div class="card reveal" data-cat="cake">
+        <div class="ph"><img src="images/menu-tart.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&fit=crop&w=600&q=80'" alt="季節のタルト"><span class="pop">季節限定</span></div>
+        <div class="card-body"><h3>季節のタルト</h3><div class="price">¥324〜</div><p>ピスタチオ・くるみ・旬のフルーツ。サクサク生地で。</p></div>
+      </div>
+      <div class="card reveal" data-cat="baked">
+        <div class="ph"><img src="images/menu-croissant.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80'" alt="クロワッサン・カヌレ"></div>
+        <div class="card-body"><h3>クロワッサン / カヌレ</h3><div class="price">¥216 / ¥324</div><p>外はパリッ・カリッ、中はもっちり。焼きたての幸せを。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="wrap center">
+    <span class="label">Gallery</span>
+    <h2 class="sec-title">ショーケースから</h2>
+    <p class="lead">画像をクリックすると拡大表示します。</p>
+    <div class="g-grid reveal" id="gg">
+      <a data-i="0"><img src="images/gallery-1.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=600&q=80'" alt=""></a>
+      <a data-i="1"><img src="images/gallery-2.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500&q=80'" alt=""></a>
+      <a data-i="2"><img src="images/gallery-3.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?auto=format&fit=crop&w=500&q=80'" alt=""></a>
+      <a data-i="3"><img src="images/gallery-4.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=500&q=80'" alt=""></a>
+      <a data-i="4"><img src="images/gallery-5.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1550617931-e17a7b70dce2?auto=format&fit=crop&w=600&q=80'" alt=""></a>
+      <a data-i="5"><img src="images/gallery-6.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=500&q=80'" alt=""></a>
+      <a data-i="6"><img src="images/gallery-7.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=500&q=80'" alt=""></a>
+      <a data-i="7"><img src="images/gallery-8.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1542826438-bd32f43d626f?auto=format&fit=crop&w=500&q=80'" alt=""></a>
+    </div>
+  </div>
+</section>
+
+<section class="insta" id="insta">
+  <div class="wrap center">
+    <span class="label">Instagram</span>
+    <div class="insta-head"><a href="https://www.instagram.com/santapule.cake/" target="_blank" rel="noopener">@santapule.cake</a></div>
+    <p class="lead">最新の入荷・季節商品はInstagramで発信中。フォローお願いします🎂</p>
+    <div class="ig-grid reveal">
+      <a href="https://www.instagram.com/santapule.cake/" target="_blank" rel="noopener"><img src="images/insta-1.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1464349153735-7db50ed83c84?auto=format&fit=crop&w=400&q=80'" alt=""></a>
+      <a href="https://www.instagram.com/santapule.cake/" target="_blank" rel="noopener"><img src="images/insta-2.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=400&q=80'" alt=""></a>
+      <a href="https://www.instagram.com/santapule.cake/" target="_blank" rel="noopener"><img src="images/insta-3.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&fit=crop&w=400&q=80'" alt=""></a>
+      <a href="https://www.instagram.com/santapule.cake/" target="_blank" rel="noopener"><img src="images/insta-4.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=400&q=80'" alt=""></a>
+      <a href="https://www.instagram.com/santapule.cake/" target="_blank" rel="noopener"><img src="images/insta-5.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=400&q=80'" alt=""></a>
+      <a href="https://www.instagram.com/santapule.cake/" target="_blank" rel="noopener"><img src="images/insta-6.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=400&q=80'" alt=""></a>
+    </div>
+  </div>
+</section>
+
+<section class="voice">
+  <div class="wrap center">
+    <span class="label">Voice</span>
+    <h2 class="sec-title">お客様の声</h2>
+    <div class="slider" id="slider">
+      <div class="slide active"><div class="stars">★★★★★</div><p>「我輩ロールがふわっふわで感動！　クリームもたっぷりなのにしつこくなくて、あっという間に食べちゃいました。」</p><cite>— 30代・女性</cite></div>
+      <div class="slide"><div class="stars">★★★★★</div><p>「手土産に焼き菓子を買ったら大好評。クロワッサンもカヌレも本格的で、近所にあって嬉しいお店です。」</p><cite>— 40代・男性</cite></div>
+      <div class="slide"><div class="stars">★★★★★</div><p>「子どもの誕生日にオーダーケーキをお願いしました。見た目も可愛くて、家族みんな大満足でした！」</p><cite>— 30代・女性</cite></div>
+    </div>
+    <div class="dots" id="dots"></div>
+  </div>
+</section>
+
+<section class="order" id="order">
+  <div class="bg"><img src="images/order.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&fit=crop&w=1600&q=80'" alt=""></div>
+  <div class="wrap">
+    <h2>お誕生日・記念日に<br>デコレーションケーキを。</h2>
+    <p>お祝いのオーダーケーキを承っております。ご予約は3日前まで。24種類のデコレーションケーキから、Webでかんたんにご予約いただけます。</p>
+    <a href="order.html" class="btn-lg">🎂 デコレーションケーキを予約する</a>
+    <p style="margin-top:20px;font-size:13px;opacity:.9">お急ぎの方はお電話が一番早いです ☎ <a href="tel:0962831123" style="text-decoration:underline">096-283-1123</a>(城山本店)</p>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <div class="center"><span class="label">FAQ</span><h2 class="sec-title">よくあるご質問</h2></div>
+    <div class="faq-wrap">
+      <div class="faq"><q>オーダーケーキは何日前までに予約が必要ですか?<em>＋</em></q><div class="a">サイズやデザインによりますが、目安として3日前までにご相談いただけると安心です。繁忙期はお早めのご予約をおすすめします。</div></div>
+      <div class="faq"><q>アレルギーの相談はできますか?<em>＋</em></q><div class="a">可能な範囲で対応いたします。使用素材についてもお気軽にお問い合わせください。ただし同じ厨房で製造しているため、完全な除去の保証は難しい点をご了承ください。</div></div>
+      <div class="faq"><q>予約なしでも買えますか?<em>＋</em></q><div class="a">はい、ショーケースの商品は店頭でそのままお買い求めいただけます。人気商品は売り切れる場合がありますので、確実にお求めの際はお取り置きをご利用ください。</div></div>
+      <div class="faq"><q>駐車場はありますか?<em>＋</em></q><div class="a">両店舗とも駐車場をご用意しています。上熊本店は約5台分ございます。</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="info" id="info">
+  <div class="wrap center">
+    <span class="label">Shop Information</span>
+    <h2 class="sec-title">店舗のご案内</h2>
+    <p class="lead">熊本市内に2店舗。お近くのサンタプレへぜひお立ち寄りください。</p>
+    <div class="stores">
+      <div class="store reveal">
+        <div class="sh"><img src="images/shop-shiroyama.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=800&q=80'" alt="城山本店">
+          <div class="name"><span>MAIN SHOP</span><b>城山本店</b></div></div>
+        <dl>
+          <dt>住所</dt><dd>熊本県熊本市西区上代10丁目12-5</dd>
+          <dt>TEL</dt><dd><a href="tel:0962831123">096-283-1123</a></dd>
+          <dt>営業</dt><dd>10:00 – 19:00</dd>
+          <dt>定休</dt><dd>無休</dd>
+          <dt>駐車</dt><dd>あり</dd>
+        </dl>
+      </div>
+      <div class="store reveal">
+        <div class="sh"><img src="images/shop-kamikumamoto.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80'" alt="上熊本店">
+          <div class="name"><span>2ND SHOP</span><b>上熊本店</b></div></div>
+        <dl>
+          <dt>住所</dt><dd>熊本県熊本市中央区段山本町5-33</dd>
+          <dt>営業</dt><dd>11:00 – 19:00</dd>
+          <dt>定休</dt><dd>不定休</dd>
+          <dt>駐車</dt><dd>あり(約5台)</dd>
+          <dt>目印</dt><dd>靴のテヅカ隣／ほっともっと向かい</dd>
+        </dl>
+      </div>
+    </div>
+    <div class="map reveal"><iframe src="https://www.google.com/maps?q=熊本市西区上代10-12-5&output=embed" loading="lazy"></iframe></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap center">
+    <span class="label">Contact</span>
+    <h2 class="sec-title">ご予約・お問い合わせ</h2>
+    <p class="lead">オーダーケーキのご相談、お取り置きなど、下記フォームよりお気軽にどうぞ。</p>
+    <form class="form" id="form" novalidate>
+      <div class="fields">
+        <div class="row"><label>お名前<span class="req">必須</span></label><input type="text" name="name" required><div class="err">お名前を入力してください</div></div>
+        <div class="row"><label>メールアドレス<span class="req">必須</span></label><input type="email" name="email" required><div class="err">正しいメールアドレスを入力してください</div></div>
+        <div class="row"><label>お問い合わせ種別</label>
+          <select name="type"><option>オーダーケーキのご相談</option><option>お取り置き</option><option>その他のお問い合わせ</option></select></div>
+        <div class="row"><label>お問い合わせ内容<span class="req">必須</span></label><textarea name="msg" rows="4" required></textarea><div class="err">内容を入力してください</div></div>
+        <button type="submit">送信する</button>
+      </div>
+      <div class="ok">✓ 送信ありがとうございます。<br>折り返しご連絡いたします。<br><small style="color:var(--brown-soft)">※これはデモです。実際には送信されません。</small></div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="logo">
+      <svg class="mark" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="23" fill="#d94a56"/><path d="M14 30c0-1 .8-1.6 2-2l8-3 8 3c1.2.4 2 1 2 2v2H14v-2z" fill="#fff"/><path d="M24 12l2.3 2.6 3.4-.6-.6 3.4L34 21l-3.5 1.6.6 3.4-3.4-.6L24 28l-2.3-2.6-3.4.6.6-3.4L14 21l3.5-1.6-.6-3.4 3.4.6L24 12z" fill="#fff" opacity=".9"/><circle cx="34" cy="15" r="3" fill="#fff"/></svg>
+      <span class="txt">SANTAPULE<small>サンタプレ</small></span>
+    </div>
+    <nav class="fnav">
+      <a href="#concept">CONCEPT</a><a href="#signature">我輩ロール</a><a href="#menu">MENU</a><a href="#insta">INSTAGRAM</a><a href="#info">SHOP</a><a href="#contact">CONTACT</a>
+    </nav>
+    <div class="sns">
+      <a href="https://www.instagram.com/santapule.cake/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.2A6.6 6.6 0 1018.6 12 6.6 6.6 0 0012 5.4zm0 10.9A4.3 4.3 0 1116.3 12 4.3 4.3 0 0112 16.3zm6.8-11.1a1.5 1.5 0 11-1.5-1.5 1.5 1.5 0 011.5 1.5z"/></svg></a>
+      <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.9 2h3.3l-7.2 8.3L23.5 22h-6.6l-5.2-6.8L5.8 22H2.5l7.7-8.8L2 2h6.8l4.7 6.2zm-1.2 18h1.8L7.4 3.8H5.5z"/></svg></a>
+      <a href="#" aria-label="LINE"><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 5.6 2 10.1c0 4 3.6 7.4 8.4 8 .3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.6 1.1-.5 6-3.5 8.1-6C21.5 13.4 22 11.8 22 10.1 22 5.6 17.5 2 12 2z"/></svg></a>
+    </div>
+    <div class="copy">© 2024 SANTAPULE. All Rights Reserved.｜このサイトは制作サンプル(デモ)です。</div>
+  </div>
+</footer>
+
+<!-- lightbox -->
+<div id="lb"><span class="x">✕</span><span class="nav-a prev">‹</span><img src="" alt=""><span class="nav-a next">›</span></div>
+
+<!-- sticky mobile cta -->
+<div class="mcta"><a href="tel:0962831123" class="call">☎ 電話する</a><a href="#info" class="map-a">📍 店舗・地図</a></div>
+
+<!-- back to top -->
+<div id="top">↑</div>
+
+<script>
+// preloader(読み込み完了 or 最大2.5秒で必ず消える)
+const hidePre=()=>document.getElementById('pre').classList.add('done');
+addEventListener('load',()=>setTimeout(hidePre,500));
+setTimeout(hidePre,2500);
+// header + progress + backtop
+const hd=document.getElementById('hd'),prog=document.getElementById('prog'),topBtn=document.getElementById('top'),heroBg=document.getElementById('heroBg');
+addEventListener('scroll',()=>{
+  const y=scrollY,h=document.documentElement.scrollHeight-innerHeight;
+  hd.classList.toggle('scrolled',y>60);
+  prog.style.width=(y/h*100)+'%';
+  topBtn.classList.toggle('show',y>500);
+  if(heroBg&&y<innerHeight)heroBg.style.transform='translateY('+(y*.25)+'px)';
+});
+topBtn.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+// mobile menu
+const bg=document.getElementById('bg'),mn=document.getElementById('mn');
+bg.onclick=()=>mn.classList.toggle('open');
+mn.querySelectorAll('a').forEach(a=>a.onclick=()=>mn.classList.remove('open'));
+// theme toggle
+const th=document.getElementById('theme'),root=document.documentElement;
+th.onclick=()=>root.setAttribute('data-theme',root.getAttribute('data-theme')==='dark'?'light':'dark');
+// reveal + counters
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const co=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const el=e.target,to=+el.dataset.to;let n=0;const step=to/60;const t=setInterval(()=>{n+=step;if(n>=to){n=to;clearInterval(t)}el.textContent=Math.floor(n).toLocaleString()},18);co.unobserve(el)}}),{threshold:.6});
+document.querySelectorAll('.stat b').forEach(el=>co.observe(el));
+// menu filter
+document.getElementById('filter').addEventListener('click',e=>{
+  if(e.target.tagName!=='BUTTON')return;
+  document.querySelectorAll('#filter button').forEach(b=>b.classList.remove('active'));
+  e.target.classList.add('active');
+  const f=e.target.dataset.f;
+  document.querySelectorAll('#cards .card').forEach(c=>c.classList.toggle('hide',f!=='all'&&c.dataset.cat!==f));
+});
+// lightbox
+const gg=document.getElementById('gg'),lb=document.getElementById('lb'),lbImg=lb.querySelector('img'),imgs=[...gg.querySelectorAll('img')];
+let ci=0;
+function show(i){ci=(i+imgs.length)%imgs.length;lbImg.src=imgs[ci].src;lb.classList.add('open')}
+gg.querySelectorAll('a').forEach(a=>a.onclick=()=>show(+a.dataset.i));
+lb.querySelector('.x').onclick=()=>lb.classList.remove('open');
+lb.querySelector('.prev').onclick=e=>{e.stopPropagation();show(ci-1)};
+lb.querySelector('.next').onclick=e=>{e.stopPropagation();show(ci+1)};
+lb.onclick=e=>{if(e.target===lb)lb.classList.remove('open')};
+addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')lb.classList.remove('open');if(e.key==='ArrowLeft')show(ci-1);if(e.key==='ArrowRight')show(ci+1)});
+// faq
+document.querySelectorAll('.faq q').forEach(q=>q.onclick=()=>q.parentElement.classList.toggle('open'));
+// testimonials
+const slides=[...document.querySelectorAll('.slide')],dots=document.getElementById('dots');
+slides.forEach((s,i)=>{const d=document.createElement('i');if(!i)d.classList.add('on');d.onclick=()=>go(i);dots.appendChild(d)});
+let si=0;
+function go(i){slides[si].classList.remove('active');dots.children[si].classList.remove('on');si=i;slides[si].classList.add('active');dots.children[si].classList.add('on')}
+setInterval(()=>go((si+1)%slides.length),5000);
+// form
+document.getElementById('form').addEventListener('submit',function(e){
+  e.preventDefault();let ok=true;
+  this.querySelectorAll('[required]').forEach(f=>{
+    const row=f.closest('.row');let bad=!f.value.trim();
+    if(f.type==='email'&&f.value)bad=!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.value);
+    row.classList.toggle('invalid',bad);if(bad)ok=false;
+  });
+  if(ok)this.classList.add('sent');
+});
+</script>
+</body>
+</html>

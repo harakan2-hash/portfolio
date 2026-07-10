@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>デコレーションケーキのご予約 ｜ サンタプレ SANTAPULE</title>
+<meta name="description" content="サンタプレのデコレーションケーキ予約ページ。生クリーム・生チョコ・タルト・シフォンなど、お祝いにぴったりのケーキをお選びいただけます。ご予約は3日前まで。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='23' fill='%23d94a56'/%3E%3Cpath d='M14 30c0-1 .8-1.6 2-2l8-3 8 3c1.2.4 2 1 2 2v2H14z' fill='white'/%3E%3Ccircle cx='34' cy='15' r='3' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Noto+Serif+JP:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#d94a56;--red-deep:#bd3742;--berry:#a52a3a;--gold:#d0a85f;
+  --cream:#fffaf4;--cream-2:#fdefe2;--card:#fff;--line:#efe0d2;
+  --text:#4d3f39;--brown:#4a3a34;--brown-soft:#8c7268;--shadow:rgba(74,58,52,.12);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--cream);line-height:1.9;overflow-x:hidden}
+h1,h2,h3{font-family:'Noto Serif JP',serif}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.center{text-align:center}
+.label{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:.32em;color:var(--red);text-transform:uppercase;margin-bottom:12px;display:block}
+
+/* header */
+header{position:fixed;top:0;left:0;width:100%;z-index:100;padding:12px 0;background:rgba(255,250,244,.95);backdrop-filter:blur(8px);box-shadow:0 4px 24px var(--shadow)}
+.nav{display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;color:var(--berry)}
+.logo .mark{width:36px;height:36px;flex:0 0 36px}
+.logo .txt{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;letter-spacing:.1em;line-height:1}
+.logo .txt small{display:block;font-family:'Noto Serif JP';font-size:10px;letter-spacing:.35em;font-weight:400;margin-top:3px;opacity:.85}
+.back{font-size:13px;letter-spacing:.06em;color:var(--text);display:flex;align-items:center;gap:6px;transition:.3s}
+.back:hover{color:var(--red)}
+
+/* hero */
+.hero{padding:150px 0 60px;background:linear-gradient(rgba(165,42,58,.88),rgba(165,42,58,.92)),url('https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&fit=crop&w=1600&q=80') center/cover;color:#fff;text-align:center}
+.hero .label{color:#f3c9ce}
+.hero h1{font-size:clamp(26px,4.6vw,42px);font-weight:500;letter-spacing:.08em;line-height:1.5}
+.hero p{margin-top:16px;font-weight:300;opacity:.95;font-size:14.5px}
+.notice{max-width:680px;margin:28px auto 0;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:12px;padding:18px 24px;font-size:13.5px;text-align:left;font-weight:300}
+.notice b{color:#ffd9a0;font-weight:500}
+
+/* steps */
+.steps{display:flex;justify-content:center;gap:0;margin:44px auto 0;max-width:560px}
+.step{flex:1;text-align:center;position:relative;font-size:12px;letter-spacing:.05em;color:var(--brown-soft)}
+.step i{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:var(--cream-2);border:2px solid var(--line);margin:0 auto 8px;font-style:normal;font-weight:700;font-family:'Cormorant Garamond';font-size:16px;transition:.4s;position:relative;z-index:2}
+.step::before{content:"";position:absolute;top:19px;left:-50%;width:100%;height:2px;background:var(--line);z-index:1}
+.step:first-child::before{display:none}
+.step.on i{background:var(--red);border-color:var(--red);color:#fff}
+.step.on{color:var(--red);font-weight:500}
+
+/* catalog */
+section{padding:70px 0}
+.sec-title{font-size:clamp(24px,3.6vw,34px);font-weight:500;letter-spacing:.08em;margin-bottom:16px}
+.lead{color:var(--brown-soft);font-weight:300;max-width:640px;margin:0 auto}
+.filter{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:34px 0 6px}
+.filter button{border:1px solid var(--line);background:transparent;color:var(--brown-soft);padding:8px 20px;border-radius:40px;font-family:inherit;font-size:13px;cursor:pointer;transition:.3s}
+.filter button.active,.filter button:hover{background:var(--red);border-color:var(--red);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:34px}
+.cake{background:var(--card);border:2px solid var(--line);border-radius:10px;overflow:hidden;cursor:pointer;transition:.35s;position:relative}
+.cake:hover{transform:translateY(-5px);box-shadow:0 18px 40px var(--shadow)}
+.cake.hide{display:none}
+.cake.sel{border-color:var(--red);box-shadow:0 18px 40px rgba(217,74,86,.25)}
+.cake.sel::after{content:"✓ 選択中";position:absolute;top:10px;right:10px;background:var(--red);color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px}
+.cake .ph{height:150px;overflow:hidden}
+.cake .ph img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.cake:hover .ph img{transform:scale(1.06)}
+.cake .bd{padding:14px 16px 16px}
+.cake .bd h3{font-size:14.5px;font-weight:600;line-height:1.5;margin-bottom:4px}
+.cake .bd .pr{font-family:'Cormorant Garamond';color:var(--red);font-weight:600;font-size:16px}
+.cake .bd .pr small{font-family:'Noto Sans JP';font-size:10.5px;color:var(--brown-soft);font-weight:300;margin-left:4px}
+.cake .bd .nt{font-size:11px;color:var(--brown-soft);font-weight:300;line-height:1.6;margin-top:4px}
+
+/* form */
+.formsec{background:var(--cream-2)}
+.form{max-width:680px;margin:40px auto 0;background:var(--card);padding:44px 42px;border-radius:14px;box-shadow:0 16px 44px var(--shadow);border:1px solid var(--line)}
+.form .row{margin-bottom:20px}
+.form .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form label{display:block;font-size:13px;letter-spacing:.05em;margin-bottom:8px;font-weight:500}
+.form label .req{color:#fff;background:var(--red);font-size:10px;padding:2px 8px;border-radius:12px;margin-left:8px;font-weight:500}
+.form label .opt{color:var(--brown-soft);font-size:10px;border:1px solid var(--line);padding:2px 8px;border-radius:12px;margin-left:8px;font-weight:300}
+.form input,.form textarea,.form select{width:100%;padding:13px 16px;border:1px solid var(--line);border-radius:8px;background:var(--cream);color:var(--text);font-family:inherit;font-size:14.5px;transition:.3s}
+.form input:focus,.form textarea:focus,.form select:focus{outline:none;border-color:var(--red);box-shadow:0 0 0 3px rgba(217,74,86,.12)}
+.form .err{color:var(--red);font-size:12px;margin-top:6px;display:none}
+.form .invalid input,.form .invalid select,.form .invalid textarea{border-color:var(--red)}
+.form .invalid .err{display:block}
+.form .hint{font-size:11.5px;color:var(--brown-soft);font-weight:300;margin-top:6px}
+.pricebox{display:flex;justify-content:space-between;align-items:center;background:var(--cream-2);border:1px dashed var(--red);border-radius:10px;padding:18px 24px;margin:26px 0}
+.pricebox span{font-size:13.5px;font-weight:500}
+.pricebox b{font-family:'Cormorant Garamond';font-size:32px;color:var(--red);font-weight:600}
+.pricebox b small{font-family:'Noto Sans JP';font-size:11px;color:var(--brown-soft);font-weight:300;margin-left:6px}
+.form button.submit{width:100%;background:var(--red);color:#fff;border:none;padding:17px;border-radius:40px;font-family:inherit;font-size:15.5px;letter-spacing:.1em;cursor:pointer;transition:.3s;font-weight:500}
+.form button.submit:hover{background:var(--berry)}
+.form .ok{display:none;text-align:center;padding:20px 0}
+.form .ok .big{font-size:44px;line-height:1;margin-bottom:16px}
+.form .ok h3{color:var(--red);font-size:20px;margin-bottom:12px}
+.form .ok p{font-size:13.5px;color:var(--brown-soft);font-weight:300}
+.form.sent .fields{display:none}
+.form.sent .ok{display:block}
+.tel-cta{text-align:center;margin-top:26px;font-size:13px;color:var(--brown-soft);font-weight:300}
+.tel-cta a{color:var(--red);font-weight:700;font-size:17px}
+
+footer{background:var(--brown);color:#f3e9df;padding:40px 0;text-align:center;font-size:11px;opacity:.9;letter-spacing:.08em}
+
+@media(max-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:680px){
+  .grid{grid-template-columns:1fr 1fr;gap:14px}
+  .form{padding:34px 22px}
+  .form .row2{grid-template-columns:1fr}
+  .hero{padding:120px 0 50px}
+  .cake .ph{height:120px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="logo">
+      <svg class="mark" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="23" fill="#d94a56"/><path d="M14 30c0-1 .8-1.6 2-2l8-3 8 3c1.2.4 2 1 2 2v2H14v-2z" fill="#fff"/><path d="M24 12l2.3 2.6 3.4-.6-.6 3.4L34 21l-3.5 1.6.6 3.4-3.4-.6L24 28l-2.3-2.6-3.4.6.6-3.4L14 21l3.5-1.6-.6-3.4 3.4.6L24 12z" fill="#fff" opacity=".9"/><circle cx="34" cy="15" r="3" fill="#fff"/></svg>
+      <span class="txt">SANTAPULE<small>サンタプレ</small></span>
+    </a>
+    <a href="index.html" class="back">← トップへ戻る</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <span class="label">Decoration Cakes</span>
+    <h1>デコレーションケーキのご予約</h1>
+    <p>お誕生日・記念日・お祝いの日に。お好きなケーキをお選びください。</p>
+    <div class="notice">
+      <b>ご予約について</b><br>
+      ・ご予約は<b>3日前まで</b>にお願いします(ケーキによっては5日以上いただく場合があります)<br>
+      ・お急ぎの場合は<b>お電話が一番早い</b>です ☎ 096-283-1123<br>
+      ・ケーキのデザインは写真と異なる場合がございます
+    </div>
+    <div class="steps">
+      <div class="step on" id="st1"><i>1</i>ケーキを選ぶ</div>
+      <div class="step" id="st2"><i>2</i>お客様情報</div>
+      <div class="step" id="st3"><i>3</i>完了</div>
+    </div>
+  </div>
+</div>
+
+<section id="catalog">
+  <div class="wrap center">
+    <h2 class="sec-title">ケーキを選ぶ</h2>
+    <p class="lead">写真をタップすると選択できます。サイズは次のステップで選べます。</p>
+    <div class="filter" id="filter">
+      <button class="active" data-f="all">すべて</button>
+      <button data-f="deco">デコレーション</button>
+      <button data-f="tart">タルト</button>
+      <button data-f="season">季節・スペシャリテ</button>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section class="formsec" id="reserve">
+  <div class="wrap center">
+    <h2 class="sec-title">ご予約フォーム</h2>
+    <p class="lead">選んだケーキの内容をご確認のうえ、お客様情報をご入力ください。</p>
+    <form class="form" id="form" novalidate>
+      <div class="fields" style="text-align:left">
+        <div class="row" id="rowCake">
+          <label>ご希望のケーキ<span class="req">必須</span></label>
+          <select id="fCake"><option value="">— 上の一覧から選択、またはこちらから —</option></select>
+          <div class="err">ケーキをお選びください</div>
+        </div>
+        <div class="row2">
+          <div class="row" id="rowSize">
+            <label>サイズ<span class="req">必須</span></label>
+            <select id="fSize"><option value="">— ケーキを選ぶと表示されます —</option></select>
+            <div class="err">サイズをお選びください</div>
+          </div>
+          <div class="row">
+            <label>個数</label>
+            <select id="fQty"><option>1</option><option>2</option><option>3</option></select>
+          </div>
+        </div>
+        <div class="pricebox"><span>お会計目安(税込)</span><b id="fPrice">¥ —<small></small></b></div>
+        <div class="row2">
+          <div class="row" id="rowDate">
+            <label>お受け取り日<span class="req">必須</span></label>
+            <input type="date" id="fDate">
+            <div class="hint">最短で3日後から選べます(ケーキにより5日以上いただく場合があります)</div>
+            <div class="err">お受け取り日をお選びください</div>
+          </div>
+          <div class="row">
+            <label>お受け取り時間</label>
+            <select id="fTime"><option>指定なし</option><option>10:00-12:00</option><option>12:00-15:00</option><option>15:00-17:00</option><option>17:00-19:00</option></select>
+          </div>
+        </div>
+        <div class="row">
+          <label>お受け取り店舗<span class="req">必須</span></label>
+          <select id="fStore"><option>城山本店(熊本市西区上代10丁目12-5)</option><option>上熊本店(熊本市中央区段山本町5-33)</option></select>
+        </div>
+        <div class="row2">
+          <div class="row" id="rowName">
+            <label>お名前<span class="req">必須</span></label>
+            <input type="text" id="fName" placeholder="山田 花子">
+            <div class="err">お名前をご入力ください</div>
+          </div>
+          <div class="row" id="rowTel">
+            <label>お電話番号<span class="req">必須</span></label>
+            <input type="tel" id="fTel" placeholder="090-0000-0000">
+            <div class="err">お電話番号をご入力ください</div>
+          </div>
+        </div>
+        <div class="row">
+          <label>メッセージプレート<span class="opt">任意</span></label>
+          <input type="text" id="fPlate" placeholder="例:おたんじょうびおめでとう">
+          <div class="hint">チョコプレートにお入れする文字(15文字程度まで)</div>
+        </div>
+        <div class="row">
+          <label>その他ご要望<span class="opt">任意</span></label>
+          <textarea rows="3" id="fNote" placeholder="ロウソクの本数、アレルギーのご相談など"></textarea>
+        </div>
+        <button type="submit" class="submit">この内容で予約する</button>
+      </div>
+      <div class="ok">
+        <div class="big">🎂</div>
+        <h3>ご予約を承りました</h3>
+        <p id="okDetail"></p>
+        <p style="margin-top:14px">確認のお電話を差し上げる場合がございます。<br>当日、お気をつけてお越しください。</p>
+        <p style="margin-top:14px;font-size:11px">※これは制作サンプル(デモ)です。実際のご予約は送信されていません。</p>
+      </div>
+    </form>
+    <div class="tel-cta">お急ぎのご予約はお電話が一番早いです<br><a href="tel:0962831123">☎ 096-283-1123</a>(城山本店)</div>
+  </div>
+</section>
+
+<footer>© 2024 SANTAPULE. All Rights Reserved.｜このページは制作サンプル(デモ)です。</footer>
+
+<script>
+// ===== ケーキデータ(2025冬パンフレットより) 価格は税込 =====
+const F1='https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=500&q=80';
+const F2='https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?auto=format&fit=crop&w=500&q=80';
+const F3='https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&fit=crop&w=500&q=80';
+const F4='https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=500&q=80';
+const F5='https://images.unsplash.com/photo-1488477304112-4944851de03d?auto=format&fit=crop&w=500&q=80';
+const F6='https://images.unsplash.com/photo-1542826438-bd32f43d626f?auto=format&fit=crop&w=500&q=80';
+const F7='https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=500&q=80';
+const F8='https://images.unsplash.com/photo-1464349153735-7db50ed83c84?auto=format&fit=crop&w=500&q=80';
+const CAKES=[
+ {id:1, cat:'deco', name:'生クリームデコレーション(フルーツ飾り)', sizes:[['15cm',4104]], note:'12cmから+3cmごとにご用意できます', img:F1},
+ {id:2, cat:'deco', name:'生チョコデコレーション(フルーツ飾り)', sizes:[['15cm',4104]], note:'12cmから+3cmごとにご用意できます', img:F2},
+ {id:3, cat:'deco', name:'生クリームデコレーション(苺飾り)', sizes:[['15cm',4320]], note:'12cmから+3cmごとにご用意できます', img:F1},
+ {id:4, cat:'deco', name:'生チョコデコレーション', sizes:[['15cm',3780]], img:F2},
+ {id:5, cat:'deco', name:'フェザーシフォン', sizes:[['14cm',1836],['20cm',3564]], img:F5},
+ {id:6, cat:'deco', name:'ハート型デコレーション', sizes:[['小',3780],['大',4860]], note:'生クリームもご用意できます', img:F1},
+ {id:7, cat:'tart', name:'フルーツタルト', sizes:[['12cm',2160],['16cm',4320]], img:F3},
+ {id:8, cat:'tart', name:'苺のタルト', sizes:[['12cm',2700],['16cm',5400]], img:F3},
+ {id:9, cat:'season', name:'パリブレストピスターシュ', sizes:[['14cm',2700]], note:'プラリネクリームもご用意できます', img:F5},
+ {id:10, cat:'deco', name:'ロールデコレーション(城山スフレ)', sizes:[['1本',2160]], note:'城山ショコラもご用意できます', img:F8},
+ {id:11, cat:'tart', name:'タルトピスターシュ', sizes:[['12cm',2160],['16cm',3780]], note:'サイズによりデザインが異なります', img:F3},
+ {id:12, cat:'tart', name:'NYチーズタルト', sizes:[['18cm',3780]], note:'ワンサイズのみ/フルーツ無しもご用意できます', img:F7},
+ {id:13, cat:'season', name:'利休', sizes:[['8×12cm',3240]], img:F6},
+ {id:14, cat:'season', name:'F(エフ)', sizes:[['11×11.6cm',3888]], img:F2},
+ {id:15, cat:'deco', name:'生デコスクエア', sizes:[['15cm',4644]], note:'写真はフルーツ増量タイプです', img:F1},
+ {id:16, cat:'season', name:'モンブラン', sizes:[['12cm',2916],['16cm',4860]], img:F5},
+ {id:17, cat:'season', name:'シャルロットフランボワーズ', sizes:[['18cm',4320]], note:'ワンサイズのみ', img:F6},
+ {id:18, cat:'season', name:'フロマージュ', sizes:[['15cm',3240]], note:'フルーツ無しもご用意できます', img:F7},
+ {id:19, cat:'season', name:'苺のミルフィーユ', sizes:[['10×15cm',4320]], note:'デザインが異なる場合があります', img:F6},
+ {id:20, cat:'season', name:'カライブ', sizes:[['15cm',3564]], note:'チョコ飾りもご用意できます', img:F2},
+ {id:21, cat:'season', name:'フィーユドートンヌ', sizes:[['9×17cm',4320]], img:F4},
+ {id:22, cat:'season', name:'ティラミス', sizes:[['14cm',3780]], img:F7},
+ {id:23, cat:'season', name:'プロフィットロール', sizes:[['16cm',3240]], img:F8},
+ {id:24, cat:'season', name:'フレジエ(1月以降〜)', sizes:[['L',4320]], note:'S〜LLでご用意できます', img:F6},
+];
+const yen=n=>'¥'+n.toLocaleString();
+
+// ===== カタログ描画 =====
+const grid=document.getElementById('grid'),fCake=document.getElementById('fCake'),fSize=document.getElementById('fSize'),fQty=document.getElementById('fQty'),fPrice=document.getElementById('fPrice');
+CAKES.forEach(c=>{
+  const low=Math.min(...c.sizes.map(s=>s[1]));
+  const el=document.createElement('div');
+  el.className='cake';el.dataset.cat=c.cat;el.dataset.id=c.id;
+  el.innerHTML=`<div class="ph"><img src="images/cake-${String(c.id).padStart(2,'0')}.jpg" onerror="this.onerror=null;this.src='${c.img}'" alt="${c.name}"></div>
+  <div class="bd"><h3>${c.name}</h3><div class="pr">${yen(low)}${c.sizes.length>1?'〜':''}<small>税込</small></div>${c.note?`<div class="nt">${c.note}</div>`:''}</div>`;
+  el.onclick=()=>selectCake(c.id,true);
+  grid.appendChild(el);
+  fCake.insertAdjacentHTML('beforeend',`<option value="${c.id}">${c.name}</option>`);
+});
+
+// ===== 絞り込み =====
+document.getElementById('filter').addEventListener('click',e=>{
+  if(e.target.tagName!=='BUTTON')return;
+  document.querySelectorAll('#filter button').forEach(b=>b.classList.remove('active'));
+  e.target.classList.add('active');
+  const f=e.target.dataset.f;
+  document.querySelectorAll('.cake').forEach(c=>c.classList.toggle('hide',f!=='all'&&c.dataset.cat!==f));
+});
+
+// ===== 選択処理 =====
+function selectCake(id,scroll){
+  document.querySelectorAll('.cake').forEach(c=>c.classList.toggle('sel',+c.dataset.id===id));
+  fCake.value=id;
+  const c=CAKES.find(x=>x.id===+id);
+  fSize.innerHTML=c.sizes.map((s,i)=>`<option value="${i}">${s[0]} … ${yen(s[1])}(税込)</option>`).join('');
+  updPrice();step(2);
+  if(scroll)document.getElementById('reserve').scrollIntoView({behavior:'smooth'});
+}
+fCake.onchange=()=>{if(fCake.value)selectCake(+fCake.value,false);else{fSize.innerHTML='<option value="">— ケーキを選ぶと表示されます —</option>';updPrice()}};
+fSize.onchange=updPrice;fQty.onchange=updPrice;
+function updPrice(){
+  const c=CAKES.find(x=>x.id===+fCake.value);
+  if(!c||fSize.value===''){fPrice.innerHTML='¥ —<small></small>';return}
+  const total=c.sizes[+fSize.value][1]*+fQty.value;
+  fPrice.innerHTML=yen(total)+'<small>税込</small>';
+}
+
+// ===== ステップ表示 =====
+function step(n){[1,2,3].forEach(i=>document.getElementById('st'+i).classList.toggle('on',i<=n))}
+
+// ===== 受取日:最短3日後 =====
+const fDate=document.getElementById('fDate');
+const d=new Date();d.setDate(d.getDate()+3);
+fDate.min=d.toISOString().split('T')[0];
+
+// ===== 送信 =====
+document.getElementById('form').addEventListener('submit',function(e){
+  e.preventDefault();let ok=true;
+  const need=[['rowCake',fCake.value],['rowSize',fSize.value!==''&&fCake.value],['rowDate',fDate.value&&fDate.value>=fDate.min],['rowName',document.getElementById('fName').value.trim()],['rowTel',document.getElementById('fTel').value.trim()]];
+  need.forEach(([row,val])=>{const r=document.getElementById(row);r.classList.toggle('invalid',!val);if(!val)ok=false});
+  if(!ok){this.scrollIntoView({behavior:'smooth'});return}
+  const c=CAKES.find(x=>x.id===+fCake.value);
+  document.getElementById('okDetail').innerHTML=
+    `<b>${c.name}(${c.sizes[+fSize.value][0]})× ${fQty.value}個</b><br>`+
+    `${fDate.value.replace(/-/g,'/')} ${document.getElementById('fTime').value}<br>`+
+    `${document.getElementById('fStore').value.split('(')[0]} にてお受け取り`;
+  this.classList.add('sent');step(3);
+  this.scrollIntoView({behavior:'smooth'});
+});
+</script>
+</body>
+</html>

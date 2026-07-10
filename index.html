@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KANNA HARADA PORTFOLIO ｜ Web制作・SNS運用・ライティング</title>
+<meta name="description" content="原田栞那（はらだかんな）のポートフォリオサイト。Web制作（HP・LP）、ブログ記事制作、Instagram運用、公式LINE・AIエージェント構築。toC営業で1年2.8億円を売り上げた経験を活かし、「集客できる」ものづくりをしています。">
+<meta name="theme-color" content="#faf6ef">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='24' fill='%23e98da3'/%3E%3Ctext x='24' y='32' text-anchor='middle' fill='%23fffaf4' font-size='22' font-family='sans-serif' font-weight='bold'%3EK%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500&family=Zen+Maru+Gothic:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf6ef;
+  --card:#ffffff;
+  --ink:#4c4441;
+  --muted:#958984;
+  --line:#eae0d5;
+  --pink:#e98da3;
+  --pink-deep:#d96f88;
+  --peach:#f5bd8e;
+  --mint:#9ad4c8;
+  --yellow:#f3c85f;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{
+  font-family:'Zen Maru Gothic',sans-serif;
+  color:var(--ink);background:var(--bg);
+  line-height:2;letter-spacing:.05em;
+  overflow-x:hidden;
+}
+.en{font-family:'Josefin Sans',sans-serif;letter-spacing:.12em}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 26px}
+
+/* ---- ふわっと浮かぶ水彩ブロブ ---- */
+.blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.5;pointer-events:none;animation:float 12s ease-in-out infinite}
+.blob.p{background:radial-gradient(circle,#f7c8d4,transparent 70%)}
+.blob.o{background:radial-gradient(circle,#fadfc0,transparent 70%)}
+.blob.m{background:radial-gradient(circle,#c2e7de,transparent 70%)}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-24px)}}
+
+/* ---- header ---- */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:20px 34px;transition:.3s;
+}
+header.on{background:rgba(250,246,239,.9);backdrop-filter:blur(8px);box-shadow:0 1px 0 var(--line)}
+header .logo{font-family:'Josefin Sans';font-weight:400;font-size:17px;letter-spacing:.28em}
+header nav{display:flex;gap:30px}
+header nav a{font-family:'Josefin Sans';font-weight:300;font-size:13.5px;letter-spacing:.18em;position:relative;padding-bottom:3px}
+header nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--pink);transition:.3s}
+header nav a:hover::after{width:100%}
+
+/* ---- hero ---- */
+.hero{min-height:100svh;position:relative;display:flex;flex-direction:column;justify-content:center;padding:130px 0 90px}
+.hero .blob:nth-child(1){width:420px;height:420px;top:6%;right:-6%}
+.hero .blob:nth-child(2){width:320px;height:320px;bottom:4%;left:-4%;animation-delay:-4s}
+.hero .blob:nth-child(3){width:230px;height:230px;top:16%;left:20%;animation-delay:-8s}
+.hero h1{
+  font-family:'Josefin Sans';font-weight:100;
+  font-size:clamp(52px,10.4vw,150px);
+  line-height:1.18;letter-spacing:.06em;text-transform:uppercase;
+}
+.hero h1 .l1{display:block;padding-left:8vw}
+.hero h1 .l2{display:block;text-align:right;padding-right:2vw}
+.hero h1 .l3{display:block;padding-left:1vw}
+.hero h1 .dot{color:var(--pink)}
+.hero .lead{
+  max-width:420px;font-size:13.5px;font-weight:400;color:var(--muted);
+  margin-top:-1.2em;position:relative;z-index:2;
+}
+.hero .tate{
+  position:absolute;right:8%;bottom:12%;
+  writing-mode:vertical-rl;font-size:13px;letter-spacing:.42em;color:var(--ink);
+  border-right:1px solid var(--line);padding-right:18px;line-height:2.6;
+}
+.hero .scroll{
+  position:absolute;left:34px;bottom:30px;
+  font-family:'Josefin Sans';font-weight:300;font-size:11px;letter-spacing:.3em;color:var(--muted);
+  display:flex;align-items:center;gap:12px;
+}
+.hero .scroll i{display:block;width:44px;height:1px;background:var(--muted);animation:slide 2s ease-in-out infinite}
+@keyframes slide{0%{transform:scaleX(0);transform-origin:left}45%{transform:scaleX(1);transform-origin:left}55%{transform:scaleX(1);transform-origin:right}100%{transform:scaleX(0);transform-origin:right}}
+
+/* ---- marquee ---- */
+.marquee{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0;background:#fffdf9}
+.marquee .track{display:flex;gap:56px;width:max-content;animation:mq 30s linear infinite}
+.marquee span{font-family:'Josefin Sans';font-weight:200;font-size:15px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink);white-space:nowrap}
+.marquee b{color:var(--pink);font-weight:400}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ---- 共通見出し ---- */
+.sec{padding:110px 0}
+.sec-head{margin-bottom:64px}
+.sec-head .jp{font-size:12.5px;color:var(--muted);display:block;margin-bottom:4px}
+.sec-head h2{
+  font-family:'Josefin Sans';font-weight:200;font-size:clamp(38px,6vw,64px);
+  letter-spacing:.08em;line-height:1.2;border-bottom:1px solid var(--line);padding-bottom:22px;
+}
+.cat-head{
+  display:flex;align-items:baseline;gap:14px;
+  margin:70px 0 30px;
+}
+.cat-head:first-of-type{margin-top:0}
+.cat-head h3{font-family:'Josefin Sans';font-weight:300;font-size:24px;letter-spacing:.14em}
+.cat-head .jp{font-size:12.5px;color:var(--muted)}
+.cat-head::after{content:"";flex:1;height:1px;background:var(--line);align-self:center}
+
+/* ---- about ---- */
+.about{position:relative}
+.about .blob:nth-child(1){width:300px;height:300px;top:0;left:2%}
+.about .blob:nth-child(2){width:260px;height:260px;bottom:-40px;right:4%;animation-delay:-5s}
+.about-top{display:grid;grid-template-columns:340px 1fr;gap:60px;align-items:center;margin-bottom:90px}
+.photo{
+  position:relative;width:100%;border-radius:30px;overflow:hidden;background:#fbeef1;
+  display:flex;align-items:center;justify-content:center;
+}
+.photo.main{aspect-ratio:1/1}
+.photo::before{
+  content:"📷 写真をここに（images/" attr(data-name) "）";
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-size:12px;color:var(--muted);text-align:center;padding:0 20px;
+}
+.photo img{position:relative;z-index:2;width:100%;height:100%;object-fit:cover}
+.about-top .name-jp{font-size:14px;color:var(--muted);display:block;margin-bottom:2px}
+.about-top h3{font-size:26px;font-weight:700;letter-spacing:.08em;margin-bottom:20px}
+.about-top h3 small{font-family:'Josefin Sans';font-weight:300;font-size:13px;letter-spacing:.2em;color:var(--muted);display:block;margin-top:4px}
+.about-top p.body{font-size:14px}
+.keys{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.keys span{
+  font-size:12px;font-weight:500;background:#fff;border:1px solid var(--line);
+  padding:8px 20px;border-radius:30px;
+}
+.keys span::before{content:"✿ ";color:var(--pink)}
+
+/* ---- story (生い立ち) ---- */
+.story{display:grid;grid-template-columns:1fr 300px;gap:60px;align-items:start}
+.timeline{position:relative;padding-left:30px}
+.timeline::before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:2px;background:var(--line);border-radius:2px}
+.tl{position:relative;padding-bottom:44px}
+.tl:last-child{padding-bottom:0}
+.tl::before{
+  content:"";position:absolute;left:-30px;top:9px;width:14px;height:14px;border-radius:50%;
+  background:var(--pink);border:3px solid var(--bg);box-shadow:0 0 0 2px var(--pink);
+}
+.tl:nth-child(2)::before{background:var(--peach);box-shadow:0 0 0 2px var(--peach)}
+.tl:nth-child(3)::before{background:var(--yellow);box-shadow:0 0 0 2px var(--yellow)}
+.tl:nth-child(4)::before{background:var(--mint);box-shadow:0 0 0 2px var(--mint)}
+.tl .when{font-family:'Josefin Sans';font-weight:400;font-size:12px;letter-spacing:.24em;color:var(--muted);text-transform:uppercase}
+.tl b{display:block;font-size:16.5px;font-weight:700;margin:2px 0 6px}
+.tl p{font-size:13px;color:#7d726d}
+.tl p.todo{color:#b9aca6;font-style:italic}
+.story-photo{position:sticky;top:100px}
+.story-photo .photo{aspect-ratio:3/4;border-radius:26px;background:#e9f5f1}
+.story-photo figcaption{font-size:11.5px;color:var(--muted);text-align:center;margin-top:12px}
+
+/* ---- work ---- */
+.work-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px 36px}
+.wk{
+  background:var(--card);border-radius:22px;overflow:hidden;
+  box-shadow:0 6px 24px rgba(120,90,80,.07);
+  transition:.4s cubic-bezier(.2,.7,.3,1);display:block;
+}
+.wk:hover{transform:translateY(-8px);box-shadow:0 22px 44px rgba(120,90,80,.14)}
+.wk .shot{position:relative;height:250px;overflow:hidden}
+.wk .shot img{width:100%;height:100%;object-fit:cover;transition:.6s}
+.wk:hover .shot img{transform:scale(1.06)}
+.wk .shot .no{
+  position:absolute;top:16px;left:18px;
+  font-family:'Josefin Sans';font-weight:400;font-size:11px;letter-spacing:.24em;
+  background:rgba(255,255,255,.88);backdrop-filter:blur(4px);padding:7px 15px;border-radius:20px;
+}
+.wk .body{padding:28px 30px 32px}
+.wk .meta{display:flex;align-items:center;gap:14px;margin-bottom:10px}
+.pill{
+  font-size:11.5px;font-weight:500;color:var(--pink-deep);
+  background:#fbeef1;padding:4px 14px;border-radius:20px;
+}
+.wk .meta .role{font-family:'Josefin Sans';font-weight:300;font-size:12px;letter-spacing:.14em;color:var(--muted)}
+.wk h3{font-size:18.5px;font-weight:700;letter-spacing:.06em}
+.wk h3 small{display:block;font-size:11.5px;color:var(--muted);font-weight:400;margin-top:2px}
+.wk p.desc{font-size:12.8px;color:#7d726d;line-height:1.95;margin:14px 0 16px}
+.wk .go{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'Josefin Sans','Zen Maru Gothic',sans-serif;font-weight:400;font-size:12.5px;letter-spacing:.16em;
+  color:var(--pink-deep);transition:.3s;
+}
+.wk:hover .go{gap:16px}
+/* 追加予定の枠 */
+.wk-soon{
+  border:2px dashed #ddcfc2;border-radius:22px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  padding:56px 30px;color:var(--muted);
+}
+.wk-soon .ic{font-size:30px;margin-bottom:10px}
+.wk-soon b{font-size:14.5px;font-weight:700;color:#8d807a;letter-spacing:.08em}
+.wk-soon p{font-size:12px;margin-top:6px}
+
+/* ---- career ---- */
+.career{background:#fffdf9;border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.career .blob:nth-child(1){width:340px;height:340px;top:-60px;right:-40px;opacity:.4}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:80px}
+.st{
+  background:var(--bg);border-radius:20px;padding:36px 20px 30px;text-align:center;
+  position:relative;overflow:hidden;
+}
+.st::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px}
+.st:nth-child(1)::after{background:var(--pink)}
+.st:nth-child(2)::after{background:var(--yellow)}
+.st:nth-child(3)::after{background:var(--peach)}
+.st:nth-child(4)::after{background:var(--mint)}
+.st .num{
+  font-family:'Josefin Sans';font-weight:200;font-size:clamp(40px,5.5vw,58px);
+  line-height:1.1;letter-spacing:.04em;
+}
+.st .num small{font-family:'Zen Maru Gothic';font-size:20px;font-weight:500;margin-left:2px}
+.st .label{font-size:13px;font-weight:700;margin-top:10px}
+.st .note{font-size:11px;color:var(--muted);margin-top:2px}
+.career-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.cr{
+  background:var(--card);border-radius:20px;padding:34px 28px;
+  box-shadow:0 6px 24px rgba(120,90,80,.06);transition:.3s;
+}
+.cr:hover{transform:translateY(-5px);box-shadow:0 16px 34px rgba(120,90,80,.12)}
+.cr .ic{
+  width:56px;height:56px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:23px;margin-bottom:16px;
+}
+.cr:nth-child(1) .ic{background:#fbeef1}
+.cr:nth-child(2) .ic{background:#fdf3e3}
+.cr:nth-child(3) .ic{background:#e9f5f1}
+.cr:nth-child(4) .ic{background:#fdf3e3}
+.cr b.ttl{font-size:16.5px;font-weight:700;display:block;margin-bottom:4px}
+.cr .sub{font-family:'Josefin Sans';font-weight:300;font-size:11px;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;display:block;margin-bottom:14px}
+.cr p{font-size:12.8px;color:#7d726d;line-height:1.95}
+.cr p .hl{color:var(--pink-deep);font-weight:700}
+.cr p.todo{color:#b9aca6;font-style:italic;font-size:11.5px;margin-top:10px}
+
+/* ---- skill ---- */
+.skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.sk{
+  background:#fffdf9;border:1px solid var(--line);border-radius:18px;padding:30px 26px;text-align:center;transition:.3s;
+}
+.sk:hover{transform:translateY(-4px)}
+.sk .ic{
+  width:58px;height:58px;border-radius:50%;margin:0 auto 16px;
+  display:flex;align-items:center;justify-content:center;font-size:24px;
+}
+.sk:nth-child(3n+1) .ic{background:#fbeef1}
+.sk:nth-child(3n+2) .ic{background:#fdf3e3}
+.sk:nth-child(3n) .ic{background:#e9f5f1}
+.sk b{font-size:14.5px;font-weight:700;display:block;margin-bottom:8px}
+.sk p{font-size:12.3px;color:#7d726d;line-height:1.9;text-align:left}
+
+/* ---- contact ---- */
+.contact-curve{height:110px;background:#fffdf9;border-radius:0 0 50% 50%/0 0 100px 100px;border-top:1px solid var(--line)}
+.contact{position:relative;text-align:center;padding:40px 0 130px}
+.contact .blob:nth-child(1){width:380px;height:380px;bottom:-60px;left:0}
+.contact .blob:nth-child(2){width:340px;height:340px;bottom:-40px;right:0;animation-delay:-6s}
+.contact h2{font-family:'Josefin Sans';font-weight:100;font-size:clamp(44px,8vw,86px);letter-spacing:.1em;margin-bottom:18px}
+.contact p{font-size:14px;color:var(--muted);max-width:520px;margin:0 auto 46px;position:relative;z-index:2}
+.contact .btn{
+  display:inline-block;position:relative;z-index:2;
+  background:var(--pink);color:#fff;
+  padding:19px 66px;border-radius:44px;
+  font-size:14.5px;font-weight:700;letter-spacing:.12em;
+  box-shadow:0 14px 30px rgba(233,141,163,.4);transition:.3s;
+}
+.contact .btn:hover{transform:translateY(-4px);background:var(--pink-deep);box-shadow:0 20px 40px rgba(233,141,163,.5)}
+
+footer{border-top:1px solid var(--line);padding:34px 0;text-align:center}
+footer .logo{font-family:'Josefin Sans';font-weight:400;letter-spacing:.28em;font-size:14px;margin-bottom:8px}
+footer p{font-size:10.5px;color:var(--muted)}
+
+.reveal{opacity:0;transform:translateY(34px);transition:.9s cubic-bezier(.2,.7,.3,1)}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:880px){
+  header{padding:16px 22px}
+  header nav{gap:18px}
+  .about-top{grid-template-columns:1fr;gap:36px}
+  .about-top .photo{max-width:320px;margin:0 auto}
+  .story{grid-template-columns:1fr}
+  .story-photo{position:static;max-width:300px;margin:0 auto}
+  .work-grid{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr;gap:14px;margin-bottom:60px}
+  .career-grid{grid-template-columns:1fr}
+  .skill-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:620px){
+  header{padding:14px 16px}
+  header .logo{font-size:14px}
+  header nav{gap:12px}
+  header nav a{font-size:10.5px;letter-spacing:.08em}
+  .hero{padding-top:110px}
+  .hero .lead{margin-top:24px}
+  .hero .tate{display:none}
+  .sec{padding:80px 0}
+  .skill-grid{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
+}
+@media(max-width:430px){
+  header .logo{display:none}
+  header nav{width:100%;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <span class="logo">KANNA</span>
+  <nav class="en">
+    <a href="#about">About</a>
+    <a href="#work">Work</a>
+    <a href="#career">Career</a>
+    <a href="#skill">Skill</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="blob p"></div>
+  <div class="blob m"></div>
+  <div class="blob o"></div>
+  <div class="wrap">
+    <h1 class="en">
+      <span class="l1">Kanna</span>
+      <span class="l2">Harada</span>
+      <span class="l3">Portfolio<span class="dot">.</span></span>
+    </h1>
+    <p class="lead">Web制作・ライティング・SNS運用。トップセールスの営業経験で培った「伝える力」で、見る人がわくわくして、ちゃんと集客につながるものづくりをしています。</p>
+  </div>
+  <span class="tate">ご覧いただき、ありがとうございます</span>
+  <span class="scroll en">SCROLL<i></i></span>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Web Design <b>✿</b> Writing <b>✿</b> SNS Marketing <b>✿</b> Sales <b>✿</b> Seminar <b>✿</b></span>
+    <span>Web Design <b>✿</b> Writing <b>✿</b> SNS Marketing <b>✿</b> Sales <b>✿</b> Seminar <b>✿</b></span>
+  </div>
+</div>
+
+<!-- ══════════ About ══════════ -->
+<section class="sec about" id="about">
+  <div class="blob o"></div>
+  <div class="blob m"></div>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="jp">（自己紹介）</span>
+      <h2 class="en">About</h2>
+    </div>
+
+    <div class="about-top">
+      <figure class="photo main reveal" data-name="profile.jpg">
+        <img src="images/profile.jpg" alt="はらだかんなのプロフィール写真" onerror="this.remove()">
+      </figure>
+      <div class="reveal">
+        <span class="name-jp">はらだ かんな</span>
+        <h3>原田 栞那<small>KANNA HARADA</small></h3>
+        <p class="body">熊本生まれ、関西育ち、東京在住。大手保険会社の営業支援部門でデータ分析や提案書づくりに携わったのち、オーストラリアでのワーキングホリデーを経て独立。帰国後はtoC営業で1年間に売上2.8億円・約30名の営業部マネジメントを経験しました。「誰よりも動き、誰よりも成果を上げる」をモットーに、お客様の120点をいっしょに実現します。趣味はテニス、愛犬とのカフェ活、旅行です。</p>
+        <p style="font-size:12px;color:var(--muted);margin-top:24px">（得意分野）</p>
+        <div class="keys" style="margin-top:10px">
+          <span>LP制作</span>
+          <span>ブログ記事作成</span>
+          <span>Instagram運用</span>
+          <span>競合アカウントリサーチ</span>
+          <span>公式LINE構築</span>
+          <span>AIエージェント構築</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cat-head reveal">
+      <h3 class="en">Story</h3>
+      <span class="jp">（これまでの生い立ち）</span>
+    </div>
+    <div class="story">
+      <div class="timeline">
+        <div class="tl reveal">
+          <span class="when">〜 2019</span>
+          <b>熊本で生まれ、関西で育つ</b>
+          <p>学生時代はテニス部の部長として、チームをまとめて近畿大会に出場。「目標に向かってやり切る力」はここで育ちました。2019年3月、立命館大学 産業社会学部を卒業。</p>
+        </div>
+        <div class="tl reveal">
+          <span class="when">2019 - 2023</span>
+          <b>三井住友海上火災保険(株)・営業支援部門</b>
+          <p>データ分析や記事作成、提案書・チラシの制作を担当。「むずかしいことを、わかりやすく伝える」ものづくりの原点です。</p>
+        </div>
+        <div class="tl reveal">
+          <span class="when">2023 - 2025</span>
+          <b>オーストラリアへワーキングホリデー</b>
+          <p>2年間の海外生活で、行動力と度胸をきたえる。滞在中の2024年12月に個人事業主として開業し、Webライティング・SNS運用の仕事をスタート。</p>
+        </div>
+        <div class="tl reveal">
+          <span class="when">2025 - 現在</span>
+          <b>toC営業で、1年で売上2.8億円</b>
+          <p>帰国後、業務委託でtoC営業を開始。1年で個人売上累計2.8億円を達成し、約30名の営業部を統率するマネジメントも経験。SNS運用・マーケティング導線設計・オンラインセールス支援の実績は累計700名以上に。</p>
+        </div>
+        <div class="tl reveal">
+          <span class="when">Now</span>
+          <b>そして、Web制作の世界へ</b>
+          <p>「売る力」と「伝える力」を、デザインとかけ合わせて。集客までまるごと支えられる制作者として活動中です。</p>
+        </div>
+      </div>
+      <figure class="story-photo reveal">
+        <div class="photo" data-name="profile_casual.jpg">
+          <img src="images/profile_casual.jpg" alt="愛犬と一緒の写真" onerror="this.remove()">
+        </div>
+        <figcaption>ふだんのわたし。もふもふが元気の源です 🐩</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ Work ══════════ -->
+<section class="sec" id="work" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="jp">（制作物）</span>
+      <h2 class="en">Work</h2>
+    </div>
+
+    <div class="cat-head reveal">
+      <h3 class="en">Website</h3>
+      <span class="jp">（HP制作 — 5作品）</span>
+    </div>
+    <div class="work-grid">
+
+      <a href="01_ケーキ屋/index.html" class="wk reveal">
+        <div class="shot"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=80" alt="ケーキ屋サイト"><span class="no en">CASE 01</span></div>
+        <div class="body">
+          <div class="meta"><span class="pill">自主制作</span><span class="role en">Design ｜ Coding</span></div>
+          <h3>ケーキ屋さんのホームページ<small>SANTAPULE ｜ サンタプレ（熊本・実在店デモ）</small></h3>
+          <p class="desc">実在するケーキ屋さんの実情報を反映した2ページ構成。24種のデコレーションケーキから選んで予約できるWeb予約フォーム（金額自動計算）つき。ベリーレッド×クリームの甘い配色です。</p>
+          <span class="go">サイトを見る →</span>
+        </div>
+      </a>
+
+      <a href="02_ラーメン屋/index.html" class="wk reveal">
+        <div class="shot"><img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=900&q=80" alt="ラーメン屋サイト"><span class="no en">CASE 02</span></div>
+        <div class="body">
+          <div class="meta"><span class="pill">自主制作</span><span class="role en">Design ｜ Coding</span></div>
+          <h3>ラーメン屋さんのホームページ<small>中華そば 那由多（大阪・十三・実在店デモ）</small></h3>
+          <p class="desc">白木基調の実店舗に合わせた、墨黒×朱赤の和モダンデザイン。縦書きの明朝体、品書き風メニュー、名物「生卵・海苔使い放題」の卓上ガイドなど、和の演出を徹底しました。</p>
+          <span class="go">サイトを見る →</span>
+        </div>
+      </a>
+
+      <a href="03_建築業界/index.html" class="wk reveal">
+        <div class="shot"><img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=900&q=80" alt="建築会社サイト"><span class="no en">CASE 03</span></div>
+        <div class="body">
+          <div class="meta"><span class="pill">自主制作</span><span class="role en">Design ｜ Coding</span></div>
+          <h3>建築設計事務所のホームページ<small>株式会社 湊建築設計（架空）</small></h3>
+          <p class="desc">余白と直線を活かしたハイエンドなミニマルデザイン。超特大の英字タイポグラフィと、ホバーで物件情報が浮かぶ施工実績ギャラリーが主役。信頼を伝える数字・許認可表記も。</p>
+          <span class="go">サイトを見る →</span>
+        </div>
+      </a>
+
+      <a href="04_土木業界/index.html" class="wk reveal">
+        <div class="shot"><img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=900&q=80" alt="土木会社サイト"><span class="no en">CASE 04</span></div>
+        <div class="body">
+          <div class="meta"><span class="pill">自主制作</span><span class="role en">Design ｜ Coding</span></div>
+          <h3>土木会社のホームページ<small>株式会社 大地土木（架空）</small></h3>
+          <p class="desc">紺×安全イエローの骨太デザイン。トラ柄の帯や斜めカットで「現場」を意匠化し、公共工事らしい実績表記と、人手不足の業界に効く採用セクションを強化しました。</p>
+          <span class="go">サイトを見る →</span>
+        </div>
+      </a>
+
+      <a href="05_ペットショップ/index.html" class="wk reveal">
+        <div class="shot"><img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=900&q=80" alt="ペットショップサイト"><span class="no en">CASE 05</span></div>
+        <div class="body">
+          <div class="meta"><span class="pill">自主制作</span><span class="role en">Design ｜ Coding</span></div>
+          <h3>ペットショップのホームページ<small>Wondertail ｜ ワンダーテール（架空・大手チェーン想定）</small></h3>
+          <p class="desc">全国チェーンのポータル型サイトを想定した2ページ構成。ペット検索・お気に入り・ペット図鑑・里親募集など、大規模サイトの構成を凝縮。「お迎えまとめガイド」ページつきです。</p>
+          <span class="go">サイトを見る →</span>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="cat-head reveal" id="lp">
+      <h3 class="en">Landing Page</h3>
+      <span class="jp">（LP制作）</span>
+    </div>
+    <div class="work-grid">
+
+      <a href="06_ペットフェアLP/index.html" class="wk reveal">
+        <div class="shot"><img src="images/lp_pet.png" alt="ペットショップのフェアLP"><span class="no en">CASE 06</span></div>
+        <div class="body">
+          <div class="meta"><span class="pill">自主制作</span><span class="role en">Design ｜ Coding ｜ LP</span></div>
+          <h3>ペットショップのフェアLP<small>Wondertail 子犬・子猫お迎えフェア（架空）</small></h3>
+          <p class="desc">初めてペットを飼う20〜30代向けの集客LP。優良LPを分析してデザイン構造を継承し、「不安への共感→安心→図解→LINE登録特典」の導線を設計。CASE 05のHPとセットのブランド想定です。</p>
+          <span class="go">LPを見る →</span>
+        </div>
+      </a>
+
+      <a href="07_ケーキ予約LP/index.html" class="wk reveal">
+        <div class="shot"><img src="images/lp_cake.png" alt="誕生日ケーキ予約LP"><span class="no en">CASE 07</span></div>
+        <div class="body">
+          <div class="meta"><span class="pill">自主制作</span><span class="role en">Design ｜ Coding ｜ LP</span></div>
+          <h3>誕生日ケーキのWeb予約LP<small>SANTAPULE ｜ サンタプレ（熊本・実在店デモ）</small></h3>
+          <p class="desc">紙吹雪×リボン見出しのお祝いデザイン。人気TOP3や「前日予約OK」などママ・パパの不安に応える構成で、CASE 01のWeb予約フォームへ直結。HP×LPの導線設計まで含めた制作例です。</p>
+          <span class="go">LPを見る →</span>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="cat-head reveal" id="blog">
+      <h3 class="en">Blog Writing</h3>
+      <span class="jp">（ブログ記事制作）</span>
+    </div>
+    <div class="work-grid">
+
+      <a href="https://docs.google.com/document/d/1SZEovWLkU_Z3UD2YOxYwzxJn7BQtPw3hmLskWHuiFHw/edit" target="_blank" rel="noopener" class="wk reveal">
+        <div class="shot" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;background:linear-gradient(150deg,#fdf3e3,#fbeef1 55%,#e9f5f1);">
+          <span style="font-size:44px;line-height:1">✍️</span>
+          <b style="font-size:15px;font-weight:700;letter-spacing:.08em">執筆サンプル 5記事</b>
+          <span style="font-size:11.5px;color:#958984">心理 ／ 文化 ／ 健康 ／ 海外生活 ／ 副業</span>
+          <span class="no en">WRITING</span>
+        </div>
+        <div class="body">
+          <div class="meta"><span class="pill">執筆サンプル</span><span class="role en">Writing</span></div>
+          <h3>ブログ記事制作<small>5ジャンル・計5万字超の執筆例</small></h3>
+          <p class="desc">「罪悪感との向き合い方」「初午の祝い方」「時短ダイエット完全ガイド」「オーストラリアワーホリ成功術」「副業を始める5ステップ」。読者の悩みから逆算した見出し設計と、初心者にもわかりやすい文章が得意です。</p>
+          <span class="go">記事を読む →</span>
+        </div>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════ Career ══════════ -->
+<section class="sec career" id="career">
+  <div class="blob p"></div>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="jp">（これまでの実績）</span>
+      <h2 class="en">Career</h2>
+    </div>
+
+    <div class="stats">
+      <div class="st reveal">
+        <div class="num en"><span class="count" data-to="2.8" data-decimals="1">0</span><small>億円</small></div>
+        <div class="label">toC営業 個人売上</div>
+        <div class="note">1年間での累計達成額</div>
+      </div>
+      <div class="st reveal">
+        <div class="num en"><span class="count" data-to="30">0</span><small>名</small></div>
+        <div class="label">営業部マネジメント</div>
+        <div class="note">統率したチームの人数</div>
+      </div>
+      <div class="st reveal">
+        <div class="num en"><span class="count" data-to="700">0</span><small>名+</small></div>
+        <div class="label">支援実績</div>
+        <div class="note">SNS運用・セールス支援の累計</div>
+      </div>
+      <div class="st reveal">
+        <div class="num en"><span class="count" data-to="10000">0</span><small>人</small></div>
+        <div class="label">Instagram総フォロワー</div>
+        <div class="note">運用アカウント合計</div>
+      </div>
+    </div>
+
+    <div class="career-grid">
+      <div class="cr reveal">
+        <div class="ic">💼</div>
+        <b class="ttl">toC営業・マネジメント</b>
+        <span class="sub">Sales / Management</span>
+        <p>1年で個人売上累計<span class="hl">2.8億円</span>を達成した<span class="hl">トップセールス</span>。<span class="hl">約30名</span>の営業部を統率するマネジメントも経験。お客様の「ほしい」を引き出すヒアリング力と提案力は、集客できるWeb制作の土台になっています。</p>
+      </div>
+      <div class="cr reveal">
+        <div class="ic">📸</div>
+        <b class="ttl">SNS運用・マーケティング支援</b>
+        <span class="sub">SNS Marketing</span>
+        <p>Instagram運用代行・自社運用で<span class="hl">総フォロワー1万人</span>。競合アカウントリサーチ、マーケティング導線設計、オンラインセールス支援まで、累計<span class="hl">700名以上</span>をサポートしてきました。</p>
+      </div>
+      <div class="cr reveal">
+        <div class="ic">🎤</div>
+        <b class="ttl">営業セミナー講師</b>
+        <span class="sub">Seminar</span>
+        <p>オンラインスクール「スキルプラス」の<span class="hl">営業セミナーに講師として登壇</span>。「営業への苦手意識」「案件獲得の悩み」をテーマに、トップセールスの実体験にもとづくノウハウをお伝えしました。</p>
+      </div>
+      <div class="cr reveal">
+        <div class="ic">🤖</div>
+        <b class="ttl">AIエージェント構築・業務効率化</b>
+        <span class="sub">AI / Automation</span>
+        <p><span class="hl">AIエージェントの構築</span>による業務効率化、<span class="hl">公式LINEの構築</span>、CS対応まで幅広く対応。営業経験×AIで「仕組みで売れる」体制づくりを支援します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ Skill ══════════ -->
+<section class="sec" id="skill">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="jp">（Web制作でできること）</span>
+      <h2 class="en">Skill</h2>
+    </div>
+    <div class="skill-grid">
+      <div class="sk reveal"><div class="ic">📱</div><b>スマホ完全対応</b><p>レスポンシブ設計に加えて、スマホ専用の固定ボタン（電話・地図）で来店につながる導線をつくります。</p></div>
+      <div class="sk reveal"><div class="ic">✨</div><b>スクロール演出</b><p>要素のフェードイン、数字のカウントアップ、パララックスなど「動くサイト」の気持ちよさを実装します。</p></div>
+      <div class="sk reveal"><div class="ic">🔍</div><b>SEO・構造化データ</b><p>meta記述・OGP・schema.org構造化データまで実装。Google検索・SNSシェアに強い下地をつくります。</p></div>
+      <div class="sk reveal"><div class="ic">⚡</div><b>高速表示</b><p>1ファイル完結の軽量設計。読み込み待ちのストレスなく、サイトからの離脱を防ぎます。</p></div>
+      <div class="sk reveal"><div class="ic">🗺</div><b>Googleマップ埋込</b><p>店舗案内には地図を標準装備。サイトのトーンに合わせた配色加工（ダーク／モノクロ）もできます。</p></div>
+      <div class="sk reveal"><div class="ic">📝</div><b>フォーム・予約</b><p>入力チェックつきの問い合わせフォームから、金額自動計算つきの予約画面まで対応できます。</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="contact-curve"></div>
+
+<section class="contact" id="contact">
+  <div class="blob o"></div>
+  <div class="blob m"></div>
+  <div class="wrap">
+    <h2 class="en reveal">Contact<span style="color:var(--pink)">.</span></h2>
+    <p class="reveal">仕事で大切にしているのは「丁寧さ」と「早いレスポンス」。<br>Web制作・LP・SNS運用・記事制作のご相談を、お気軽にどうぞ。</p>
+    <a href="mailto:harakan2@gmail.com" class="btn reveal">✉ 相談してみる</a>
+    <p class="reveal" style="margin:34px auto 0;font-size:12px">🕊 土日祝も対応 ／ 返信可能時間 6:00〜23:00 ／ オンラインMTG可</p>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">KANNA HARADA</div>
+  <p>© 2026 Kanna Harada Portfolio. 掲載サイトは制作サンプルです。実在店舗のデモは公開情報を元に作成しており、公式サイトではありません。</p>
+</footer>
+
+<script>
+const hd=document.getElementById('hd');
+addEventListener('scroll',()=>hd.classList.toggle('on',scrollY>40));
+
+if(location.search.includes('noanim')){
+  document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));
+}else{
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+}
+
+/* 数字のカウントアップ */
+const cio=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;
+  cio.unobserve(e.target);
+  const el=e.target,to=parseFloat(el.dataset.to),dec=+(el.dataset.decimals||0);
+  const t0=performance.now(),dur=1600;
+  (function tick(t){
+    const p=Math.min((t-t0)/dur,1),v=to*(1-Math.pow(1-p,3));
+    el.textContent=dec?v.toFixed(dec):Math.round(v).toLocaleString();
+    if(p<1)requestAnimationFrame(tick);
+  })(t0);
+}),{threshold:.6});
+document.querySelectorAll('.count').forEach(el=>cio.observe(el));
+</script>
+</body>
+</html>
