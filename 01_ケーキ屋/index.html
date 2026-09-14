@@ -236,6 +236,12 @@ section{padding:110px 0}
 .store dd a{color:var(--red-deep);font-weight:500}
 .map{margin-top:36px;border-radius:8px;overflow:hidden;box-shadow:0 20px 44px var(--shadow);height:320px}
 .map iframe{width:100%;height:100%;border:0;filter:grayscale(.15) sepia(.08)}
+.map-fallback{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;width:100%;height:100%;background:linear-gradient(160deg,var(--cream-2),var(--cream));border:1px solid var(--line);transition:.3s}
+.map-fallback:hover{background:var(--cream-2)}
+.map-fallback svg{width:34px;height:34px;color:var(--red)}
+.map-fallback b{font-size:15px;font-weight:600;letter-spacing:.04em}
+.map-fallback span{font-size:12.5px;color:var(--brown-soft);font-weight:300}
+.map-fallback em{font-style:normal;font-size:12px;color:var(--red-deep);font-weight:500;letter-spacing:.04em;border-bottom:1px solid var(--red-deep);margin-top:2px}
 
 /* contact form */
 .contact{background:var(--cream-2)}
@@ -532,7 +538,14 @@ footer .copy{font-size:11px;opacity:.5;letter-spacing:.1em;margin-top:18px}
         </dl>
       </div>
     </div>
-    <div class="map reveal"><iframe src="https://www.google.com/maps?q=熊本市西区上代10-12-5&output=embed" loading="lazy"></iframe></div>
+    <div class="map reveal">
+      <a href="https://www.google.com/maps?q=熊本市西区上代10-12-5" target="_blank" rel="noopener" class="map-fallback">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.2 7-11.5A7 7 0 105 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+        <b>熊本県熊本市西区上代10丁目12-5</b>
+        <span>城山本店・上熊本店の2店舗</span>
+        <em>Google マップで開く ↗</em>
+      </a>
+    </div>
   </div>
 </section>
 
